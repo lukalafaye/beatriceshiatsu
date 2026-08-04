@@ -649,25 +649,34 @@ a[href^='tel:'] { white-space: nowrap; }
   .nav {
     position: fixed;
     inset: 0;
+    z-index: 105;
     margin: 0;
     display: grid;
     place-items: center;
-    background: rgba(59, 45, 58, .97);
+    background: var(--ink);
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s ease, visibility .3s ease;
   }
-  .nav.is-open { opacity: 1; visibility: visible; z-index: 105; }
+  .nav.is-open { opacity: 1; visibility: visible; }
+
+  body.nav-open .site-header__brand,
+  body.nav-open .site-header__logo { visibility: hidden; }
 
   .nav__list {
     flex-direction: column;
     align-items: center;
     gap: 1.75rem;
   }
-  .nav__list a { color: var(--white); font-size: 1.25rem; }
+  .nav__list a,
+  .site-header.is-scrolled .nav__list a { color: var(--white); font-size: 1.25rem; }
+  .nav__list a[aria-current='true'],
+  .site-header.is-scrolled .nav__list a:hover,
+  .site-header.is-scrolled .nav__list a[aria-current='true'] { color: var(--mauve); }
 
   body.nav-open { overflow: hidden; }
-  body.nav-open .nav-toggle { position: relative; z-index: 110; color: var(--white); }
+  body.nav-open .nav-toggle,
+  body.nav-open .site-header.is-scrolled .nav-toggle { position: relative; z-index: 110; color: var(--white); }
   body.nav-open .nav-toggle__bars { background: transparent; }
   body.nav-open .nav-toggle__bars::before { transform: translateY(7px) rotate(45deg); }
   body.nav-open .nav-toggle__bars::after { transform: translateY(-7px) rotate(-45deg); }
