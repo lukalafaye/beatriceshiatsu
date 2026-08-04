@@ -330,25 +330,39 @@ body.nav-open .site-header { backdrop-filter: none; }
 .hero__more {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  padding-top: .3rem;
+  gap: .55rem;
+  min-height: 3rem;
   color: var(--white);
   font-family: var(--display);
   font-size: .9375rem;
   font-weight: 600;
-  letter-spacing: .02em;
+  letter-spacing: .015em;
+  line-height: 1;
   text-decoration: none;
-  text-shadow: 0 1px 12px rgba(40, 28, 40, .55);
+  text-shadow: 0 1px 12px rgba(40, 28, 40, .5);
 }
-.hero__more span {
-  padding-bottom: .3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .45);
-  transition: border-color .35s var(--ease);
+/* soulignement en ::after décalé : le cadre du texte reste intact,
+   donc les glyphes s'alignent sur ceux du bouton voisin */
+.hero__more span { position: relative; }
+.hero__more span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.45rem;
+  height: 1px;
+  background: currentColor;
+  opacity: .5;
+  transform-origin: left bottom;
+  transition: opacity .25s var(--ease), transform .35s var(--ease);
 }
-.hero__more svg { margin-bottom: .3rem; transition: transform .35s var(--ease); }
+.hero__more svg {
+  margin-top: -1px;
+  transition: transform .35s var(--ease);
+}
 
 @media (hover: hover) and (pointer: fine) {
-  .hero__more:hover span { border-color: var(--white); }
+  .hero__more:hover span::after { opacity: 1; transform: scaleY(1.6); }
   .hero__more:hover svg { transform: translateY(3px); }
 }
 
@@ -382,34 +396,48 @@ body.nav-open .site-header { backdrop-filter: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .6rem;
-  padding: .8rem 1.6rem;
+  gap: .625rem;
+  min-height: 3rem;
+  padding: 0 1.75rem;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   font-family: var(--display);
   font-size: .9375rem;
   font-weight: 600;
-  letter-spacing: .02em;
-  line-height: 1.2;
+  letter-spacing: .015em;
+  line-height: 1;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color .35s var(--ease), box-shadow .35s var(--ease);
+  transition: background-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
 }
-.btn__icon { flex: none; opacity: .9; }
+/* l'icône pèse moins qu'une lettre : on resserre le bord gauche */
+.btn--icon { padding-left: 1.4rem; }
+.btn__icon {
+  flex: none;
+  /* recentrage optique sur la hauteur de capitale, pas sur le cadratin */
+  margin-top: -1px;
+}
+.btn__phone { font-variant-numeric: tabular-nums; letter-spacing: .06em; }
 
 .btn--solid {
   background: var(--plum);
   color: var(--white);
-  box-shadow: 0 8px 22px -14px rgba(59, 45, 58, .55);
+  border-color: rgba(59, 45, 58, .16);
+  box-shadow: 0 1px 2px rgba(59, 45, 58, .18), 0 8px 20px -14px rgba(59, 45, 58, .6);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .btn--solid:hover {
     background: var(--plum-dark);
-    box-shadow: 0 10px 26px -14px rgba(59, 45, 58, .65);
+    transform: translateY(-1px);
+    box-shadow: 0 1px 2px rgba(59, 45, 58, .2), 0 12px 24px -14px rgba(59, 45, 58, .7);
   }
 }
-.btn--solid:active { background: var(--plum-dark); }
+.btn--solid:active {
+  background: var(--plum-dark);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(59, 45, 58, .2);
+}
 
 /* ---------- sections ---------- */
 
