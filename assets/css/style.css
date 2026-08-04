@@ -543,10 +543,6 @@ body.nav-open .site-header { backdrop-filter: none; }
   border-color: rgba(123, 63, 125, .22);
 }
 .card:hover::before { opacity: 1; }
-.card--featured {
-  background: linear-gradient(165deg, #fff, var(--blush) 100%);
-  border-color: rgba(123, 63, 125, .2);
-}
 
 .card__chakra {
   width: 40px;

@@ -3,13 +3,5 @@
   <url>
     <loc>https://beatriceshiatsu.fr/</loc>
     <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://beatriceshiatsu.fr/mentions-legales.html</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
   </url>
 </urlset>
