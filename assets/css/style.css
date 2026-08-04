@@ -338,19 +338,19 @@ body.nav-open .site-header { backdrop-filter: none; }
   font-weight: 600;
   letter-spacing: .02em;
   text-decoration: none;
-  transition: color .4s var(--ease);
+  text-shadow: 0 1px 12px rgba(40, 28, 40, .55);
 }
 .hero__more span {
   padding-bottom: .3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .4);
-  transition: border-color .4s var(--ease);
+  border-bottom: 1px solid rgba(255, 255, 255, .45);
+  transition: border-color .35s var(--ease);
 }
-.hero__more svg { margin-bottom: .3rem; transition: transform .4s var(--ease); }
-.hero__more:hover,
-.hero__more:focus-visible { color: var(--mauve); }
-.hero__more:hover span,
-.hero__more:focus-visible span { border-color: var(--mauve); }
-.hero__more:hover svg { transform: translateY(3px); }
+.hero__more svg { margin-bottom: .3rem; transition: transform .35s var(--ease); }
+
+@media (hover: hover) and (pointer: fine) {
+  .hero__more:hover span { border-color: var(--white); }
+  .hero__more:hover svg { transform: translateY(3px); }
+}
 
 .hero__scroll {
   position: absolute;
@@ -393,20 +393,23 @@ body.nav-open .site-header { backdrop-filter: none; }
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease), color .4s var(--ease);
+  transition: background-color .35s var(--ease), box-shadow .35s var(--ease);
 }
-.btn__icon { flex: none; opacity: .85; }
+.btn__icon { flex: none; opacity: .9; }
 
 .btn--solid {
   background: var(--plum);
   color: var(--white);
-  box-shadow: 0 10px 26px -16px rgba(93, 45, 97, .95);
+  box-shadow: 0 8px 22px -14px rgba(59, 45, 58, .55);
 }
-.btn--solid:hover,
-.btn--solid:focus-visible {
-  background: var(--plum-dark);
-  box-shadow: 0 0 0 6px rgba(201, 163, 196, .26), 0 12px 30px -16px rgba(93, 45, 97, .95);
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--solid:hover {
+    background: var(--plum-dark);
+    box-shadow: 0 10px 26px -14px rgba(59, 45, 58, .65);
+  }
 }
+.btn--solid:active { background: var(--plum-dark); }
 
 /* ---------- sections ---------- */
 
