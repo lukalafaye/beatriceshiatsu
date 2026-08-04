@@ -3,47 +3,132 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shiatsu Être et Sens · Béatrice Morel, praticienne shiatsu à Vonnas</title>
-<meta name="description" content="Béatrice Morel, praticienne shiatsu et énergéticienne à Vonnas (01540). Shiatsu thérapeutique, du dos, du visage, des jambes et de confort. Sur rendez-vous, déplacement à domicile.">
+<title>Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)</title>
+<meta name="description" content="Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (Ain), près de Bourg-en-Bresse. Shiatsu thérapeutique, du dos, du visage. Sur rendez-vous.">
 <link rel="canonical" href="https://beatriceshiatsu.fr/">
+<meta name="author" content="Béatrice Morel">
+<meta name="geo.region" content="FR-01">
+<meta name="geo.placename" content="Confrançon">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Shiatsu Être et Sens">
-<meta property="og:title" content="Shiatsu Être et Sens · Béatrice Morel">
-<meta property="og:description" content="Praticienne shiatsu et énergéticienne à Vonnas. Technique de rééquilibrage énergétique, sur rendez-vous.">
+<meta property="og:title" content="Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)">
+<meta property="og:description" content="Praticienne shiatsu et énergéticienne à Confrançon, près de Bourg-en-Bresse. Technique de rééquilibrage énergétique, sur rendez-vous.">
 <meta property="og:url" content="https://beatriceshiatsu.fr/">
-<meta property="og:image" content="https://beatriceshiatsu.fr/assets/img/hero.jpg">
+<meta property="og:image" content="https://beatriceshiatsu.fr/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shiatsu Être et Sens, Béatrice Morel, praticienne shiatsu à Confrançon">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#7b3f7d">
 <link rel="icon" href="./assets/img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
 <link rel="preload" href="./assets/fonts/quicksand-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/img/hero.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="./assets/css/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "name": "Shiatsu Être et Sens",
-  "description": "Praticienne shiatsu et énergéticienne. Shiatsu thérapeutique, du dos, du visage, des jambes et de confort.",
-  "url": "https://beatriceshiatsu.fr/",
-  "image": "https://beatriceshiatsu.fr/assets/img/hero.jpg",
-  "telephone": "+33662088034",
-  "founder": { "@type": "Person", "name": "Béatrice Morel", "jobTitle": "Praticienne shiatsu, énergéticienne" },
-  "address": {
-    "@type": "PostalAddress",
-    "postalCode": "01540",
-    "addressLocality": "Vonnas",
-    "addressRegion": "Ain",
-    "addressCountry": "FR"
-  },
-  "areaServed": ["Vonnas", "Mézériat", "Bourg-en-Bresse", "Ain"],
-  "availableService": [
-    { "@type": "Service", "name": "Shiatsu thérapeutique" },
-    { "@type": "Service", "name": "Shiatsu du dos" },
-    { "@type": "Service", "name": "Shiatsu des jambes / drainage" },
-    { "@type": "Service", "name": "Shiatsu de confort" },
-    { "@type": "Service", "name": "Shiatsu du visage" }
+  "@graph": [
+    {
+      "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
+      "@id": "https://beatriceshiatsu.fr/#cabinet",
+      "name": "Shiatsu Être et Sens",
+      "alternateName": ["Être et Sens", "Être et Sens Shiatsu", "Béatrice Morel Shiatsu"],
+      "description": "Cabinet de shiatsu de Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (Ain). Shiatsu thérapeutique, du dos, des jambes, de confort et du visage.",
+      "url": "https://beatriceshiatsu.fr/",
+      "image": "https://beatriceshiatsu.fr/assets/img/og-image.jpg",
+      "logo": "https://beatriceshiatsu.fr/assets/img/logo.png",
+      "telephone": "+33662088034",
+      "currenciesAccepted": "EUR",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "01310",
+        "addressLocality": "Confrançon",
+        "addressRegion": "Ain",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Confrançon" },
+        { "@type": "City", "name": "Polliat" },
+        { "@type": "City", "name": "Montrevel-en-Bresse" },
+        { "@type": "City", "name": "Bourg-en-Bresse" },
+        { "@type": "AdministrativeArea", "name": "Ain" }
+      ],
+      "founder": { "@id": "https://beatriceshiatsu.fr/#beatrice" },
+      "employee": { "@id": "https://beatriceshiatsu.fr/#beatrice" },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "servicePhone": "+33662088034",
+        "availableLanguage": "fr"
+      },
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu thérapeutique", "serviceType": "Shiatsu" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu du dos", "serviceType": "Shiatsu" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu des jambes drainage", "serviceType": "Shiatsu" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu de confort", "serviceType": "Shiatsu" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu du visage", "serviceType": "Shiatsu" } }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://beatriceshiatsu.fr/#beatrice",
+      "name": "Béatrice Morel",
+      "givenName": "Béatrice",
+      "familyName": "Morel",
+      "jobTitle": ["Praticienne shiatsu", "Énergéticienne"],
+      "worksFor": { "@id": "https://beatriceshiatsu.fr/#cabinet" },
+      "knowsAbout": ["Shiatsu", "Shiatsu thérapeutique", "Rééquilibrage énergétique", "Énergétique", "Bien-être"],
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "01310",
+          "addressLocality": "Confrançon",
+          "addressRegion": "Ain",
+          "addressCountry": "FR"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://beatriceshiatsu.fr/#site",
+      "url": "https://beatriceshiatsu.fr/",
+      "name": "Shiatsu Être et Sens",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://beatriceshiatsu.fr/#cabinet" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://beatriceshiatsu.fr/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment se déroule une séance de shiatsu ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un temps d'échange, un bilan énergétique, puis le shiatsu : habillé, allongé sur un futon. On termine toujours par un moment de retour au calme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que porter pour une séance de shiatsu ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une tenue souple et confortable, en matière naturelle si possible. Le shiatsu se pratique toujours habillé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "À quelle fréquence faire une séance de shiatsu ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cela dépend de ce que vous venez travailler. Une séance ponctuelle peut suffire ; un accompagnement se construit parfois sur plusieurs rendez-vous."
+          }
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -74,8 +159,8 @@
       </ul>
     </nav>
 
-    <a class="site-header__logo" href="#accueil" aria-label="Shiatsu Être et Sens, accueil">
-      <img src="./assets/img/logo.png" width="545" height="541" alt="" decoding="async">
+    <a class="site-header__logo" href="#accueil">
+      <img src="./assets/img/logo.png" width="440" height="437" alt="Shiatsu Être et Sens" decoding="async">
     </a>
   </div>
 </header>
@@ -84,42 +169,50 @@
 
   <section class="hero" id="accueil">
     <div class="hero__media" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
     <div class="hero__inner">
-      <p class="hero__eyebrow">Vonnas · Ain</p>
-      <h1 class="hero__title">Shiatsu Être et Sens</h1>
-      <p class="hero__name">Béatrice Morel</p>
+      <p class="hero__eyebrow">Confrançon · Ain</p>
+      <h1 class="hero__title">
+        <span class="hero__title-main">Shiatsu Être et Sens</span>
+        <span class="hero__title-name">Béatrice Morel</span>
+      </h1>
       <p class="hero__role">Praticienne shiatsu · Énergéticienne</p>
       <div class="hero__actions">
         <a class="btn btn--solid" href="tel:+33662088034">06 62 08 80 34</a>
         <a class="btn btn--ghost" href="#activite">Découvrir les séances</a>
       </div>
-      <p class="hero__note">Sur rendez-vous · Déplacement à domicile</p>
+      <ul class="hero__badges">
+        <li>Sur rendez-vous</li>
+        <li>Déplacement à domicile</li>
+        <li>Près de Bourg-en-Bresse</li>
+      </ul>
     </div>
-    <a class="hero__scroll" href="#a-propos" aria-label="Descendre vers À propos"><span aria-hidden="true"></span></a>
+    <a class="hero__scroll" href="#a-propos" aria-label="Descendre vers la section À propos"><span aria-hidden="true"></span></a>
   </section>
 
   <div class="divider" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
       <path d="M0,96 C240,40 420,110 700,74 C980,38 1180,96 1440,52 L1440,120 L0,120 Z" fill="#e8cfe0"/>
-      <path d="M0,110 C260,70 480,120 760,92 C1040,64 1220,112 1440,84 L1440,120 L0,120 Z" fill="#c9a3c4" opacity=".75"/>
+      <path d="M0,110 C260,70 480,120 760,92 C1040,64 1220,112 1440,84 L1440,120 L0,120 Z" fill="#c9a3c4" opacity=".7"/>
     </svg>
   </div>
 
   <section class="section section--blush" id="a-propos">
     <div class="wrap">
-      <h2 class="section__title">À propos</h2>
-      <p class="section__lede">Le Shiatsu s'adresse à tous et à tous les âges.</p>
+      <p class="section__kicker" data-reveal>À propos</p>
+      <h2 class="section__title" data-reveal>À propos de Béatrice Morel</h2>
+      <p class="section__lede" data-reveal>Le shiatsu s'adresse à tous et à tous les âges.</p>
 
       <div class="about">
-        <div class="about__text">
+        <div class="about__text" data-reveal>
           <p>Le shiatsu est une technique de rééquilibrage énergétique consistant à débloquer les surcharges émotionnelles stagnantes par des pressions exercées avec les doigts ou les paumes des mains.</p>
           <p>Chaque séance commence par un temps d'écoute, puis un bilan énergétique qui permet d'adapter le travail à ce que le corps exprime ce jour-là. Le shiatsu se pratique habillé, allongé sur un futon, dans un cadre calme et sécurisant.</p>
-          <p>Je vous accompagne à mon cabinet de Vonnas, ou à votre domicile lorsque le déplacement est plus simple pour vous.</p>
+          <p>Je vous accompagne à mon cabinet de Confrançon, dans l'Ain, ou à votre domicile lorsque le déplacement est plus simple pour vous.</p>
           <p class="about__signature">Béatrice Morel<br><span>Praticienne shiatsu · Énergéticienne</span></p>
         </div>
-        <figure class="about__figure">
+        <figure class="about__figure" data-reveal>
           <div class="about__portrait" role="img" aria-label="Portrait de Béatrice Morel"></div>
-          <figcaption>Cabinet de Vonnas · sur rendez-vous</figcaption>
+          <figcaption>Cabinet de Confrançon · sur rendez-vous</figcaption>
         </figure>
       </div>
     </div>
@@ -127,22 +220,23 @@
 
   <section class="section" id="activite">
     <div class="wrap">
-      <h2 class="section__title">Activité</h2>
-      <p class="section__lede">Cinq accompagnements, adaptés à votre besoin du moment.</p>
+      <p class="section__kicker" data-reveal>Activité</p>
+      <h2 class="section__title" data-reveal>Mes séances de shiatsu</h2>
+      <p class="section__lede" data-reveal>Cinq accompagnements, adaptés à votre besoin du moment.</p>
 
       <ul class="cards">
-        <li class="card">
+        <li class="card card--featured" data-reveal>
           <span class="card__chakra card__chakra--crown" aria-hidden="true"></span>
           <h3 class="card__title">Shiatsu thérapeutique</h3>
           <p class="card__sub">Bilan énergétique, shiatsu personnalisé, temps d'échange</p>
           <p class="card__body">Stress, surcharges mentales, dépression, perte d'énergie globale, douleurs, renforcement du système immunitaire, acouphènes, ménopause, insomnie.</p>
           <div class="card__footer">
-            <p class="card__duration">1h15 – 1h30</p>
+            <p class="card__duration">1h15 à 1h30</p>
             <p class="card__duration">Enfants jusqu'à 10 ans · 45 mn</p>
           </div>
         </li>
 
-        <li class="card">
+        <li class="card" data-reveal>
           <span class="card__chakra card__chakra--throat" aria-hidden="true"></span>
           <h3 class="card__title">Shiatsu du dos</h3>
           <p class="card__sub">Ciblage des tensions : dos, nuque et tête</p>
@@ -152,7 +246,7 @@
           </div>
         </li>
 
-        <li class="card">
+        <li class="card" data-reveal>
           <span class="card__chakra card__chakra--root" aria-hidden="true"></span>
           <h3 class="card__title">Shiatsu des jambes drainage</h3>
           <p class="card__sub">Presso-esthétique, massage shiatsu</p>
@@ -162,7 +256,7 @@
           </div>
         </li>
 
-        <li class="card">
+        <li class="card" data-reveal>
           <span class="card__chakra card__chakra--heart" aria-hidden="true"></span>
           <h3 class="card__title">Shiatsu de confort</h3>
           <p class="card__sub">Points de shiatsu et étirements sur tous les méridiens du corps</p>
@@ -172,7 +266,7 @@
           </div>
         </li>
 
-        <li class="card">
+        <li class="card" data-reveal>
           <span class="card__chakra card__chakra--brow" aria-hidden="true"></span>
           <h3 class="card__title">Shiatsu du visage</h3>
           <p class="card__sub">Points de shiatsu et massage ciblé</p>
@@ -183,77 +277,82 @@
         </li>
       </ul>
 
-      <p class="notice">Tarifs communiqués par téléphone, au <a class="link" href="tel:+33662088034">06 62 08 80 34</a>.</p>
-      <p class="disclaimer">Le shiatsu est une technique de bien-être et de rééquilibrage énergétique. Il ne constitue pas un acte médical et ne remplace ni un diagnostic, ni un traitement, ni un avis médical.</p>
+      <p class="notice" data-reveal>Tarifs communiqués par téléphone, au <a class="link" href="tel:+33662088034">06 62 08 80 34</a>.</p>
+      <p class="disclaimer" data-reveal>Le shiatsu est une technique de bien-être et de rééquilibrage énergétique. Il ne constitue pas un acte médical et ne remplace ni un diagnostic, ni un traitement, ni un avis médical.</p>
     </div>
   </section>
 
   <section class="section section--mauve" id="evenements">
     <div class="wrap">
-      <h2 class="section__title">Événements</h2>
-      <p class="section__lede">Ateliers, salons et rencontres autour du shiatsu.</p>
+      <p class="section__kicker" data-reveal>Événements</p>
+      <h2 class="section__title" data-reveal>Ateliers et événements</h2>
+      <p class="section__lede" data-reveal>Ateliers, salons et rencontres autour du shiatsu, dans l'Ain.</p>
 
       <ul class="events">
-        <li class="event event--tba">
+        <li class="event event--tba" data-reveal>
           <div class="event__body">
             <p class="event__pill">Date à venir</p>
             <h3 class="event__title">Atelier découverte du shiatsu</h3>
             <p>Une matinée pour découvrir les gestes de base et repartir avec quelques points simples à pratiquer chez soi.</p>
-            <p class="event__meta">Vonnas · sur inscription au 06 62 08 80 34</p>
+            <p class="event__meta">Confrançon · sur inscription au <a class="link" href="tel:+33662088034">06 62 08 80 34</a></p>
           </div>
         </li>
       </ul>
 
-      <p class="notice">Les prochaines dates seront annoncées ici. N'hésitez pas à appeler pour être prévenue.</p>
+      <p class="notice" data-reveal>Les prochaines dates seront annoncées ici. N'hésitez pas à appeler pour être prévenue.</p>
     </div>
   </section>
 
   <section class="section" id="contact">
     <div class="wrap">
-      <h2 class="section__title">Contact</h2>
-      <p class="section__lede">Les séances se déroulent uniquement sur rendez-vous.</p>
+      <p class="section__kicker" data-reveal>Contact</p>
+      <h2 class="section__title" data-reveal>Contact et accès</h2>
+      <p class="section__lede" data-reveal>Les séances se déroulent uniquement sur rendez-vous.</p>
 
-      <div class="contact">
-        <div class="contact__block">
-          <h3>Téléphone</h3>
-          <p><a class="contact__phone" href="tel:+33662088034">06 62 08 80 34</a></p>
-          <p class="contact__hint">Si je suis en séance, laissez-moi un message : je vous rappelle.</p>
+      <div class="contact-panel" data-reveal>
+        <div class="contact">
+          <div class="contact__block">
+            <h3>Téléphone</h3>
+            <p><a class="contact__phone" href="tel:+33662088034">06 62 08 80 34</a></p>
+            <p class="contact__hint">Si je suis en séance, laissez-moi un message : je vous rappelle.</p>
+          </div>
+
+          <div class="contact__block">
+            <h3>Cabinet</h3>
+            <p class="contact__address">A remplir<br>01310 Confrançon</p>
+            <p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Confran%C3%A7on+01310" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></p>
+          </div>
+
+          <div class="contact__block">
+            <h3>Déplacement</h3>
+            <p>Déplacement à domicile possible à Confrançon et dans le secteur de Bourg-en-Bresse.</p>
+            <p class="contact__hint">Nous en parlons ensemble au téléphone, au <a class="link" href="tel:+33662088034">06 62 08 80 34</a>.</p>
+          </div>
         </div>
 
-        <div class="contact__block">
-          <h3>Cabinet</h3>
-          <p class="contact__address">A remplir</p>
-          <p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Vonnas" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></p>
-        </div>
-
-        <div class="contact__block">
-          <h3>Déplacement</h3>
-          <p>Déplacement à domicile possible dans le secteur de Vonnas et alentours.</p>
-          <p class="contact__hint">Nous en parlons ensemble au téléphone, au <a class="link" href="tel:+33662088034">06 62 08 80 34</a>.</p>
-        </div>
+        <p class="contact__cta">
+          <a class="btn btn--solid" href="tel:+33662088034">Prendre rendez-vous</a>
+        </p>
       </div>
-
-      <p class="contact__cta">
-        <a class="btn btn--solid" href="tel:+33662088034">Prendre rendez-vous</a>
-      </p>
     </div>
   </section>
 
   <section class="section section--blush" id="partage">
     <div class="wrap">
-      <h2 class="section__title">Partage</h2>
-      <p class="section__lede">Quelques repères pour prolonger le travail entre les séances.</p>
+      <p class="section__kicker" data-reveal>Partage</p>
+      <h2 class="section__title" data-reveal>Partage</h2>
+      <p class="section__lede" data-reveal>Questions fréquentes et repères pour prolonger le travail entre les séances.</p>
 
       <ul class="notes">
-        <li class="note">
-          <h3>Comment se déroule une séance ?</h3>
+        <li class="note" data-reveal>
+          <h3>Comment se déroule une séance de shiatsu&nbsp;?</h3>
           <p>Un temps d'échange, un bilan énergétique, puis le shiatsu : habillé, allongé sur un futon. On termine toujours par un moment de retour au calme.</p>
         </li>
-        <li class="note">
+        <li class="note" data-reveal>
           <h3>Que porter&nbsp;?</h3>
           <p>Une tenue souple et confortable, en matière naturelle si possible. Le shiatsu se pratique toujours habillé.</p>
         </li>
-        <li class="note">
+        <li class="note" data-reveal>
           <h3>À quelle fréquence&nbsp;?</h3>
           <p>Cela dépend de ce que vous venez travailler. Une séance ponctuelle peut suffire ; un accompagnement se construit parfois sur plusieurs rendez-vous.</p>
         </li>
@@ -268,14 +367,14 @@
     <div>
       <p class="site-footer__brand">Shiatsu Être et Sens</p>
       <p>Béatrice Morel, praticienne shiatsu et énergéticienne</p>
-      <p>A remplir</p>
+      <p>A remplir, 01310 Confrançon (Ain)</p>
     </div>
     <div>
       <p><a class="link link--light" href="tel:+33662088034">06 62 08 80 34</a></p>
       <p><a class="link link--light" href="./mentions-legales.html">Mentions légales</a></p>
     </div>
   </div>
-  <p class="site-footer__base">© <span id="year">2026</span> Shiatsu Être et Sens · Sur rendez-vous</p>
+  <p class="site-footer__base">© <span id="year">2026</span> Shiatsu Être et Sens · Béatrice Morel · Confrançon, Ain · Sur rendez-vous</p>
 </footer>
 
 <script src="./assets/js/main.js" defer></script>

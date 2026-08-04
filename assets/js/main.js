@@ -51,5 +51,24 @@ if ('IntersectionObserver' in window && sections.length) {
   sections.forEach((section) => observer.observe(section));
 }
 
+const revealTargets = [...document.querySelectorAll('[data-reveal]')];
+if ('IntersectionObserver' in window && revealTargets.length) {
+  document.documentElement.classList.add('reveal-ready');
+  const revealObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const siblings = [...entry.target.parentElement.children].filter((el) => el.hasAttribute('data-reveal'));
+        const index = Math.max(0, siblings.indexOf(entry.target));
+        entry.target.style.transitionDelay = `${Math.min(index, 5) * 80}ms`;
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      });
+    },
+    { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+  );
+  revealTargets.forEach((target) => revealObserver.observe(target));
+}
+
 const year = document.getElementById('year');
 if (year) year.textContent = String(new Date().getFullYear());
