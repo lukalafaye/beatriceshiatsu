@@ -571,6 +571,8 @@ h1, h2, h3 {
 .link { color: var(--plum); text-underline-offset: 3px; }
 .link--light { color: var(--white); }
 
+a[href^='tel:'] { white-space: nowrap; }
+
 /* ---------- partage ---------- */
 
 .notes {
