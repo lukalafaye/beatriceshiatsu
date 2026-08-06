@@ -1,13 +1,15 @@
-@font-face {
-  font-family: 'Quicksand';
-  src: url('../fonts/quicksand-latin.woff2') format('woff2');
-  font-weight: 400 700;
-  font-display: swap;
-}
+/* Montserrat (OFL) : le sans géométrique du logo, "ÊTRE & SENS".
+   Allura (OFL) : la calligraphie du logo, "Shiatsu". */
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/montserrat-latin.woff2') format('woff2');
-  font-weight: 300 700;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Allura';
+  src: url('../fonts/allura-latin.woff2') format('woff2');
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -44,7 +46,8 @@
   --ease: cubic-bezier(.22, 1, .36, 1);
 
   --sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --display: 'Quicksand', 'Montserrat', sans-serif;
+  --display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --script: 'Allura', 'Apple Chancery', 'Segoe Script', cursive;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -71,10 +74,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 a { color: var(--plum); }
 
+/* le logo pose des capitales légères très espacées : les titres
+   suivent cette voix plutôt qu'un gras appuyé */
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 700;
-  line-height: 1.15;
+  font-weight: 300;
+  line-height: 1.2;
   color: var(--ink);
   margin: 0;
   text-wrap: balance;
@@ -138,9 +143,10 @@ p { text-wrap: pretty; }
 }
 .site-header__brand-name {
   font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.0625rem;
-  letter-spacing: .01em;
+  font-weight: 500;
+  font-size: .9375rem;
+  letter-spacing: .17em;
+  text-transform: uppercase;
 }
 .site-header__brand-sub {
   font-size: .625rem;
@@ -292,21 +298,38 @@ body.nav-open .site-header { backdrop-filter: none; }
   margin: 0 0 1.5rem;
   font-size: .6875rem;
   letter-spacing: .34em;
+  text-indent: .17em;
   text-transform: uppercase;
   opacity: .92;
 }
 
-.hero__title { display: grid; gap: .5rem; color: var(--white); }
-.hero__title-main {
-  font-size: clamp(2.25rem, 7.2vw, 4.75rem);
-  letter-spacing: -.02em;
-  text-shadow: 0 2px 30px rgba(30, 20, 30, .4);
+/* reprise du verrouillage du logo : la calligraphie, puis les
+   capitales espacées, puis le nom */
+.hero__title { display: grid; gap: .35rem; color: var(--white); }
+.hero__title-script {
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: clamp(3.25rem, 11vw, 6.5rem);
+  line-height: .95;
+  /* une écriture liée ne se laisse pas interlettrer */
+  letter-spacing: 0;
+  text-shadow: 0 2px 30px rgba(30, 20, 30, .45);
+}
+.hero__title-caps {
+  font-size: clamp(1.0625rem, 2.9vw, 1.625rem);
+  font-weight: 300;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  /* le blanc final décale les glyphes d'une demi-graduation à gauche */
+  text-indent: .15em;
+  text-shadow: 0 1px 20px rgba(30, 20, 30, .4);
 }
 .hero__title-name {
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: clamp(1.0625rem, 2.6vw, 1.5rem);
-  letter-spacing: .16em;
+  margin-top: .85rem;
+  font-size: clamp(.8125rem, 1.9vw, .9375rem);
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-indent: .11em;
   text-transform: uppercase;
   color: var(--mauve);
 }
@@ -465,17 +488,20 @@ body.nav-open .site-header { backdrop-filter: none; }
 
 .section__title {
   text-align: center;
-  font-size: clamp(1.75rem, 4.2vw, 2.625rem);
-  letter-spacing: -.015em;
+  font-size: clamp(1.375rem, 2.9vw, 1.875rem);
+  font-weight: 300;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1.35;
 }
+/* filet fin : la barre de 3px pesait trop sous des capitales légères */
 .section__title::after {
   content: '';
   display: block;
-  width: 60px;
-  height: 3px;
-  margin: 1.125rem auto 0;
-  border-radius: 3px;
-  background: linear-gradient(90deg, var(--mauve), var(--plum));
+  width: 72px;
+  height: 1px;
+  margin: 1.25rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--plum-light) 35%, var(--plum-light) 65%, transparent);
 }
 
 .section__lede {
@@ -514,13 +540,15 @@ body.nav-open .site-header { backdrop-filter: none; }
 .about__text p { margin: 0 0 1.25rem; }
 .about__signature {
   margin-top: 2rem;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.0625rem;
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 1.1;
   color: var(--plum);
 }
 .about__signature span {
   display: block;
+  margin-top: .35rem;
   font-family: var(--sans);
   font-weight: 300;
   font-size: .875rem;
@@ -598,7 +626,7 @@ body.nav-open .site-header { backdrop-filter: none; }
 .card__chakra--brow { color: var(--chakra-brow); }
 .card__chakra--crown { color: var(--chakra-crown); }
 
-.card__title { font-size: 1.25rem; letter-spacing: -.01em; }
+.card__title { font-size: 1.125rem; font-weight: 500; letter-spacing: .05em; }
 .card__sub {
   margin: .75rem 0 1rem;
   font-style: italic;
@@ -619,9 +647,9 @@ body.nav-open .site-header { backdrop-filter: none; }
 .card__duration {
   margin: 0;
   font-family: var(--display);
-  font-weight: 600;
-  font-size: .9375rem;
-  letter-spacing: .03em;
+  font-weight: 500;
+  font-size: .875rem;
+  letter-spacing: .07em;
   color: var(--plum);
 }
 .card__duration + .card__duration {
@@ -649,7 +677,7 @@ body.nav-open .site-header { backdrop-filter: none; }
   backdrop-filter: blur(8px);
 }
 .event--tba { grid-template-columns: 1fr; }
-.event__body h3 { font-size: 1.1875rem; }
+.event__body h3 { font-size: 1.125rem; font-weight: 500; letter-spacing: .05em; }
 .event__body p { margin: .75rem 0 0; font-size: .9375rem; color: var(--ink-soft); }
 .event__body .event__pill {
   display: inline-block;
@@ -691,10 +719,11 @@ body.nav-open .site-header { backdrop-filter: none; }
 .contact__block p { margin: 0 0 .625rem; }
 .contact__phone {
   font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.625rem;
+  font-weight: 500;
+  font-size: 1.5rem;
   text-decoration: none;
-  letter-spacing: -.01em;
+  letter-spacing: .05em;
+  font-variant-numeric: tabular-nums;
 }
 .contact__phone:hover { text-decoration: underline; text-underline-offset: 4px; }
 .contact__address { font-size: 1.0625rem; line-height: 1.6; }
@@ -744,9 +773,10 @@ a[href^='tel:'] { white-space: nowrap; }
 }
 .site-footer p { margin: 0 0 .5rem; }
 .site-footer__brand {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.1875rem;
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.2;
   color: var(--white);
 }
 .site-footer__base {
@@ -764,7 +794,9 @@ a[href^='tel:'] { white-space: nowrap; }
 .legal { max-width: 46rem; }
 .legal h2 {
   margin: 2.75rem 0 .875rem;
-  font-size: 1.1875rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: .05em;
   color: var(--plum);
 }
 .legal p { margin: 0 0 1rem; }
