@@ -1,6 +1,6 @@
 # beatriceshiatsu.fr
 
-Site vitrine de **Shiatsu Être et Sens** — Béatrice Morel, praticienne shiatsu et énergéticienne à Polliat (01310), dans l'Ain.
+Site vitrine de **Shiatsu Être et Sens** — Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (01310), dans l'Ain.
 
 HTML/CSS/JS statique, sans étape de build. Servi par GitHub Pages sur le domaine `beatriceshiatsu.fr`.
 
@@ -63,4 +63,4 @@ Toutes les couleurs sont des variables CSS en haut de `style.css` (palette repri
 - **Polices auto-hébergées** plutôt que le CDN Google Fonts : appeler `fonts.googleapis.com` transmet
   l'adresse IP des visiteurs à Google, ce qui a été jugé contraire au RGPD (Landgericht München, 2022).
 - **Aucun cookie, aucun traceur** : pas de bandeau de consentement nécessaire.
-- **Données structurées** `HealthAndBeautyBusiness` (JSON-LD) pour le référencement local autour de Polliat et Bourg-en-Bresse.
+- **Données structurées** `HealthAndBeautyBusiness` (JSON-LD) pour le référencement local autour de Confrançon et Bourg-en-Bresse.
