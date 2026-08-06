@@ -7,23 +7,42 @@ HTML/CSS/JS statique, sans étape de build. Servi par GitHub Pages sur le domain
 ## Structure
 
 ```
-index.html              page unique (Accueil, À propos, Activité, Événements, Contact, Partage)
+index.html              gabarit de la page unique — ne contient pas de texte, seulement des variables
+_data/content.yml       TOUT le texte du site (édité via Pages CMS ou à la main)
+.pages.yml              configuration de l'interface d'édition Pages CMS
+_config.yml             configuration Jekyll (GitHub Pages assemble le gabarit + le contenu)
 mentions-legales.html   obligatoire (LCEN) — contient des champs à compléter
 404.html
 assets/css/style.css
 assets/js/main.js       menu mobile, header au scroll, lien actif
 assets/img/             hero.jpg, logo.png, favicon.png, apple-touch-icon.png
-assets/fonts/           Quicksand + Montserrat auto-hébergées (woff2, licence OFL)
-CNAME .nojekyll robots.txt sitemap.xml
+assets/fonts/           Montserrat + Allura auto-hébergées (woff2, licence OFL)
+CNAME robots.txt sitemap.xml
 ```
+
+## Modifier le texte du site
+
+Le texte ne vit plus dans le HTML. Deux façons de le changer :
+
+1. **Interface d'édition** — [pagescms.org](https://pagescms.org), se connecter avec GitHub,
+   ouvrir ce dépôt : chaque section du site devient un formulaire. Enregistrer crée un commit,
+   le site se reconstruit tout seul en une à deux minutes.
+2. **À la main** — éditer `_data/content.yml`.
+
+Dans les textes, `[tel]` est remplacé automatiquement par le numéro cliquable.
+`&nbsp;` sert à coller l'espace insécable avant un `?` (typographie française).
 
 ## Développement
 
-Aucune dépendance. Ouvrir `index.html`, ou servir le dossier :
+GitHub Pages assemble le site avec Jekyll. Pour prévisualiser un changement localement :
 
 ```sh
-python3 -m http.server 8000
+gem install jekyll     # une seule fois
+jekyll serve           # http://localhost:4000
 ```
+
+Sans Jekyll, ouvrir `index.html` directement n'affiche que le gabarit (les variables
+`{{ … }}` ne sont pas remplacées).
 
 ## Déploiement
 
@@ -63,4 +82,5 @@ Toutes les couleurs sont des variables CSS en haut de `style.css` (palette repri
 - **Polices auto-hébergées** plutôt que le CDN Google Fonts : appeler `fonts.googleapis.com` transmet
   l'adresse IP des visiteurs à Google, ce qui a été jugé contraire au RGPD (Landgericht München, 2022).
 - **Aucun cookie, aucun traceur** : pas de bandeau de consentement nécessaire.
-- **Données structurées** `HealthAndBeautyBusiness` (JSON-LD) pour le référencement local autour de Confrançon et Bourg-en-Bresse.
+- **Données structurées** `HealthAndBeautyBusiness` (JSON-LD) pour le référencement local autour de Confrançon et Bourg-en-Bresse. Elles sont générées depuis `_data/content.yml`, donc elles ne peuvent pas se désynchroniser du texte affiché.
+- **Contenu séparé du gabarit** : `_data/content.yml` d'un côté, `index.html` de l'autre. C'est ce qui rend l'édition possible sans toucher au HTML.

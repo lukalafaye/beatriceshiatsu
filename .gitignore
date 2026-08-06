@@ -1,1 +1,5 @@
 .DS_Store
+
+# Build Jekyll local
+_site/
+.jekyll-cache/

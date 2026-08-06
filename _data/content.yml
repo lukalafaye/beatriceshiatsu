@@ -1,0 +1,140 @@
+# Tout le texte du site. Modifiable depuis Pages CMS ou directement ici.
+# Dans les textes, [tel] est remplacé par le numéro cliquable.
+
+cabinet:
+  nom: "Shiatsu Être et Sens"
+  praticienne: "Béatrice Morel"
+  role: "Praticienne shiatsu · Énergéticienne"
+  telephone_affiche: "06 62 08 80 34"
+  telephone_lien: "+33662088034"
+  commune: "Confrançon"
+  departement: "Ain"
+  code_postal: "01310"
+  maps_url: "https://www.google.com/maps/search/?api=1&query=Confran%C3%A7on+01310"
+
+seo:
+  titre: "Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)"
+  description: "Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (Ain), près de Bourg-en-Bresse. Shiatsu thérapeutique, du dos, du visage. Sur rendez-vous."
+  og_titre: "Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)"
+  og_description: "Praticienne shiatsu et énergéticienne à Confrançon, près de Bourg-en-Bresse. Technique de rééquilibrage énergétique, sur rendez-vous."
+  og_image_alt: "Shiatsu Être et Sens, Béatrice Morel, praticienne shiatsu à Confrançon"
+  description_cabinet: "Cabinet de shiatsu de Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (Ain). Shiatsu thérapeutique, du dos, des jambes, de confort et du visage."
+  zone_desservie:
+    - "Confrançon"
+    - "Montrevel-en-Bresse"
+    - "Bourg-en-Bresse"
+
+navigation:
+  - libelle: "Accueil"
+    ancre: "#accueil"
+  - libelle: "À propos"
+    ancre: "#a-propos"
+  - libelle: "Activité"
+    ancre: "#activite"
+  - libelle: "Événements"
+    ancre: "#evenements"
+  - libelle: "Contact"
+    ancre: "#contact"
+  - libelle: "Partage"
+    ancre: "#partage"
+
+hero:
+  surtitre: "Confrançon · Ain"
+  titre_calligraphie: "Shiatsu"
+  titre_capitales: "Être et Sens"
+  lien_secondaire: "Découvrir les séances"
+
+apropos:
+  kicker: "À propos"
+  titre: "À propos de Béatrice Morel"
+  lede: "Le shiatsu s'adresse à tous et à tous les âges."
+  paragraphes:
+    - "Le shiatsu est une technique de rééquilibrage énergétique consistant à débloquer les surcharges émotionnelles stagnantes par des pressions exercées avec les doigts ou les paumes des mains."
+    - "Chaque séance commence par un temps d'écoute, puis un bilan énergétique qui permet d'adapter le travail à ce que le corps exprime ce jour-là. Le shiatsu se pratique habillé, allongé sur un futon, dans un cadre calme et sécurisant."
+    - "Je vous accompagne à mon cabinet de Confrançon, dans l'Ain, ou à votre domicile lorsque le déplacement est plus simple pour vous."
+  legende_photo: "Confrançon · sur rendez-vous"
+
+activite:
+  kicker: "Activité"
+  titre: "Mes séances de shiatsu"
+  lede: "Cinq accompagnements, adaptés à votre besoin du moment."
+  prestations:
+    - titre: "Shiatsu thérapeutique"
+      chakra: "crown"
+      sous_titre: "Bilan énergétique, shiatsu personnalisé, temps d'échange"
+      description: "Stress, surcharges mentales, dépression, perte d'énergie globale, douleurs, renforcement du système immunitaire, acouphènes, ménopause, insomnie."
+      durees:
+        - "1h15 à 1h30"
+        - "Enfants jusqu'à 10 ans · 45 mn"
+    - titre: "Shiatsu du dos"
+      chakra: "throat"
+      sous_titre: "Ciblage des tensions : dos, nuque et tête"
+      description: "Lâcher prise, réduire le stress, assouplir la colonne vertébrale, douleurs lombaires, rééquilibrage énergétique, circulation du dos, détente des muscles trapèzes."
+      durees:
+        - "45 mn"
+    - titre: "Shiatsu des jambes drainage"
+      chakra: "root"
+      sous_titre: "Presso-esthétique, massage shiatsu"
+      description: "Douleurs inflammatoires, circulation sanguine et lymphatique, améliorations musculaires, impatiences, récupération après effort, jambes lourdes, affinement de la silhouette."
+      durees:
+        - "1h"
+    - titre: "Shiatsu de confort"
+      chakra: "heart"
+      sous_titre: "Points de shiatsu et étirements sur tous les méridiens du corps"
+      description: "Amélioration de la circulation énergétique, détente profonde."
+      durees:
+        - "1h30"
+    - titre: "Shiatsu du visage"
+      chakra: "brow"
+      sous_titre: "Points de shiatsu et massage ciblé"
+      description: "Détente des muscles des yeux, du visage et du cou, dégage les voies respiratoires, sinusites, maux de tête et migraines, stress, anxiété, amélioration sanguine (couperose), élasticité de la peau (ridules, rides, sécheresse)."
+      durees:
+        - "45 mn"
+  note_tarifs: "Tarifs communiqués par téléphone, au [tel]."
+  avertissement: "Le shiatsu est une technique de bien-être et de rééquilibrage énergétique. Il ne constitue pas un acte médical et ne remplace ni un diagnostic, ni un traitement, ni un avis médical."
+
+evenements:
+  kicker: "Événements"
+  titre: "Ateliers et événements"
+  lede: "Ateliers, salons et rencontres autour du shiatsu, dans l'Ain."
+  liste:
+    - badge: "Date à venir"
+      titre: "Atelier découverte du shiatsu"
+      description: "Une matinée pour découvrir les gestes de base et repartir avec quelques points simples à pratiquer chez soi."
+      informations: "Confrançon · sur inscription au [tel]"
+  note: "Les prochaines dates seront annoncées ici. N'hésitez pas à appeler pour être prévenue."
+
+contact:
+  kicker: "Contact"
+  titre: "Contact et accès"
+  lede: "Les séances se déroulent uniquement sur rendez-vous."
+  telephone_titre: "Téléphone"
+  telephone_precision: "Si je suis en séance, laissez-moi un message : je vous rappelle."
+  cabinet_titre: "Cabinet"
+  cabinet_adresse: "Confrançon"
+  cabinet_lien_carte: "Ouvrir dans Google Maps"
+  deplacement_titre: "Déplacement"
+  deplacement_texte: "Déplacement à domicile possible."
+  deplacement_precision: "Nous en parlons ensemble au téléphone, au [tel]."
+  bouton: "Prendre rendez-vous"
+
+partage:
+  kicker: "Partage"
+  titre: "Partage"
+  lede: "Questions fréquentes et repères pour prolonger le travail entre les séances."
+  # question = titre affiché ; question_seo = version explicite pour Google
+  questions:
+    - question: "Comment se déroule une séance de shiatsu&nbsp;?"
+      question_seo: "Comment se déroule une séance de shiatsu ?"
+      reponse: "Un temps d'échange, un bilan énergétique, puis le shiatsu : habillé, allongé sur un futon. On termine toujours par un moment de retour au calme."
+    - question: "Quoi porter&nbsp;?"
+      question_seo: "Quoi porter pour une séance de shiatsu ?"
+      reponse: "Une tenue souple et confortable, en matière naturelle si possible. Le shiatsu se pratique toujours habillé."
+    - question: "À quelle fréquence&nbsp;?"
+      question_seo: "À quelle fréquence faire une séance de shiatsu ?"
+      reponse: "Cela dépend de ce que vous venez travailler. Une séance ponctuelle peut suffire ; un accompagnement se construit parfois sur plusieurs rendez-vous."
+
+pied:
+  presentation: "Béatrice Morel, praticienne shiatsu et énergéticienne"
+  lien_mentions: "Mentions légales"
+  mention_base: "Sur rendez-vous"

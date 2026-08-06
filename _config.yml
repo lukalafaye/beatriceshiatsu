@@ -1,0 +1,10 @@
+# GitHub Pages construit le site avec Jekyll. Le contenu vient de _data/content.yml ;
+# index.html n'est qu'un gabarit.
+title: Shiatsu Être et Sens
+description: Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (Ain).
+url: https://beatriceshiatsu.fr
+
+# Rien à convertir en Markdown ici : le site est écrit en HTML.
+exclude:
+  - README.md
+  - .gitignore

@@ -1,0 +1,152 @@
+# Configuration Pages CMS — https://pagescms.org
+# Tout le texte du site est édité depuis un seul fichier : _data/content.yml
+
+media:
+  input: assets/img
+  output: /assets/img
+
+content:
+  - name: contenu
+    label: Texte du site
+    type: file
+    path: _data/content.yml
+    fields:
+      - name: cabinet
+        label: Coordonnées
+        type: object
+        fields:
+          - { name: nom, label: Nom du cabinet, type: string }
+          - { name: praticienne, label: Praticienne, type: string }
+          - { name: role, label: Intitulé (sous le nom), type: string }
+          - { name: telephone_affiche, label: Téléphone affiché, type: string }
+          - { name: telephone_lien, label: Téléphone technique (format +33…), type: string }
+          - { name: commune, label: Commune, type: string }
+          - { name: departement, label: Département, type: string }
+          - { name: code_postal, label: Code postal, type: string }
+          - { name: maps_url, label: Lien Google Maps, type: string }
+
+      - name: hero
+        label: Bandeau d'accueil
+        type: object
+        fields:
+          - { name: surtitre, label: Surtitre, type: string }
+          - { name: titre_calligraphie, label: Titre calligraphié, type: string }
+          - { name: titre_capitales, label: Titre en capitales, type: string }
+          - { name: lien_secondaire, label: Lien secondaire, type: string }
+
+      - name: apropos
+        label: À propos
+        type: object
+        fields:
+          - { name: kicker, label: Étiquette, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: lede, label: Chapeau, type: string }
+          - { name: paragraphes, label: Paragraphes, type: text, list: true }
+          - { name: legende_photo, label: Légende de la photo, type: string }
+
+      - name: activite
+        label: Activité et prestations
+        type: object
+        fields:
+          - { name: kicker, label: Étiquette, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: lede, label: Chapeau, type: string }
+          - name: prestations
+            label: Prestations
+            type: object
+            list: { min: 1, collapsible: { collapsed: true, summary: "{titre}" } }
+            fields:
+              - { name: titre, label: Nom de la séance, type: string }
+              - name: chakra
+                label: Couleur (chakra)
+                type: select
+                options:
+                  values: [root, sacral, solar, heart, throat, brow, crown]
+              - { name: sous_titre, label: Sous-titre, type: string }
+              - { name: description, label: Description, type: text }
+              - { name: durees, label: Durées, type: string, list: { min: 1 } }
+          - { name: note_tarifs, label: "Note tarifs ([tel] = numéro cliquable)", type: string }
+          - { name: avertissement, label: Avertissement légal, type: text }
+
+      - name: evenements
+        label: Ateliers et événements
+        type: object
+        fields:
+          - { name: kicker, label: Étiquette, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: lede, label: Chapeau, type: string }
+          - name: liste
+            label: Événements
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{titre}" } }
+            fields:
+              - { name: badge, label: Badge (date ou « Date à venir »), type: string }
+              - { name: titre, label: Titre, type: string }
+              - { name: description, label: Description, type: text }
+              - { name: informations, label: "Informations ([tel] = numéro cliquable)", type: string }
+          - { name: note, label: Note sous la liste, type: text }
+
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: kicker, label: Étiquette, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: lede, label: Chapeau, type: string }
+          - { name: telephone_titre, label: "Titre du bloc téléphone", type: string }
+          - { name: telephone_precision, label: Précision téléphone, type: text }
+          - { name: cabinet_titre, label: Titre du bloc cabinet, type: string }
+          - { name: cabinet_adresse, label: Adresse affichée, type: string }
+          - { name: cabinet_lien_carte, label: Libellé du lien carte, type: string }
+          - { name: deplacement_titre, label: Titre du bloc déplacement, type: string }
+          - { name: deplacement_texte, label: Texte déplacement, type: string }
+          - { name: deplacement_precision, label: "Précision ([tel] = numéro cliquable)", type: string }
+          - { name: bouton, label: Libellé du bouton, type: string }
+
+      - name: partage
+        label: Partage et questions fréquentes
+        type: object
+        fields:
+          - { name: kicker, label: Étiquette, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: lede, label: Chapeau, type: string }
+          - name: questions
+            label: Questions
+            type: object
+            list: { min: 1, collapsible: { collapsed: true, summary: "{question}" } }
+            fields:
+              - { name: question, label: "Question affichée (&nbsp;? pour l'espace insécable)", type: string }
+              - { name: question_seo, label: Version complète pour Google, type: string }
+              - { name: reponse, label: Réponse, type: text }
+
+      - name: pied
+        label: Pied de page
+        type: object
+        fields:
+          - { name: presentation, label: Présentation, type: string }
+          - { name: lien_mentions, label: Libellé mentions légales, type: string }
+          - { name: mention_base, label: Mention de bas de page, type: string }
+
+      - name: navigation
+        label: Menu de navigation
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{libelle}" } }
+        fields:
+          - { name: libelle, label: Libellé, type: string }
+          - { name: ancre, label: "Ancre (ex. #contact)", type: string }
+
+      - name: seo
+        label: Référencement (titre et descriptions)
+        type: object
+        fields:
+          - { name: titre, label: Titre de l'onglet, type: string }
+          - { name: description, label: Description Google, type: text }
+          - { name: og_titre, label: Titre au partage, type: string }
+          - { name: og_description, label: Description au partage, type: text }
+          - { name: og_image_alt, label: Description de l'image de partage, type: string }
+          - { name: description_cabinet, label: Description structurée, type: text }
+          - { name: zone_desservie, label: Communes desservies, type: string, list: true }
+
+settings:
+  content:
+    merge: true

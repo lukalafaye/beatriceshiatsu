@@ -1,24 +1,34 @@
+---
+# Le texte de cette page vit dans _data/content.yml (éditable via Pages CMS).
+# Cette page n'est qu'un gabarit : ne pas y écrire de contenu en dur.
+---
+{%- assign c = site.data.content.cabinet -%}
+{%- assign seo = site.data.content.seo -%}
+{%- capture tel -%}<a class="link" href="tel:{{ c.telephone_lien }}">{{ c.telephone_affiche }}</a>{%- endcapture -%}
+{%- capture icone_tel -%}<svg class="btn__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21.5 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.5 2 2 0 0 1 2-2.2h2.6a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L7.5 9.4a15.8 15.8 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/>
+          </svg>{%- endcapture -%}
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)</title>
-<meta name="description" content="Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (Ain), près de Bourg-en-Bresse. Shiatsu thérapeutique, du dos, du visage. Sur rendez-vous.">
+<title>{{ seo.titre }}</title>
+<meta name="description" content="{{ seo.description }}">
 <link rel="canonical" href="https://beatriceshiatsu.fr/">
-<meta name="author" content="Béatrice Morel">
+<meta name="author" content="{{ c.praticienne }}">
 <meta name="geo.region" content="FR-01">
-<meta name="geo.placename" content="Confrançon">
+<meta name="geo.placename" content="{{ c.commune }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="Shiatsu Être et Sens">
-<meta property="og:title" content="Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)">
-<meta property="og:description" content="Praticienne shiatsu et énergéticienne à Confrançon, près de Bourg-en-Bresse. Technique de rééquilibrage énergétique, sur rendez-vous.">
+<meta property="og:site_name" content="{{ c.nom }}">
+<meta property="og:title" content="{{ seo.og_titre }}">
+<meta property="og:description" content="{{ seo.og_description }}">
 <meta property="og:url" content="https://beatriceshiatsu.fr/">
 <meta property="og:image" content="https://beatriceshiatsu.fr/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Shiatsu Être et Sens, Béatrice Morel, praticienne shiatsu à Confrançon">
+<meta property="og:image:alt" content="{{ seo.og_image_alt }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#7b3f7d">
 <link rel="icon" href="./assets/img/favicon.png" type="image/png">
@@ -34,49 +44,47 @@
     {
       "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
       "@id": "https://beatriceshiatsu.fr/#cabinet",
-      "name": "Shiatsu Être et Sens",
+      "name": {{ c.nom | jsonify }},
       "alternateName": ["Être et Sens", "Être et Sens Shiatsu", "Béatrice Morel Shiatsu"],
-      "legalName": "Béatrice Morel",
+      "legalName": {{ c.praticienne | jsonify }},
       "foundingDate": "2007-09-01",
       "identifier": { "@type": "PropertyValue", "propertyID": "SIRET", "value": "49971433500027" },
-      "description": "Cabinet de shiatsu de Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon (Ain). Shiatsu thérapeutique, du dos, des jambes, de confort et du visage.",
+      "description": {{ seo.description_cabinet | jsonify }},
       "url": "https://beatriceshiatsu.fr/",
       "image": "https://beatriceshiatsu.fr/assets/img/og-image.jpg",
       "logo": "https://beatriceshiatsu.fr/assets/img/logo.png",
-      "telephone": "+33662088034",
+      "telephone": {{ c.telephone_lien | jsonify }},
       "currenciesAccepted": "EUR",
       "address": {
         "@type": "PostalAddress",
-        "postalCode": "01310",
-        "addressLocality": "Confrançon",
-        "addressRegion": "Ain",
+        "postalCode": {{ c.code_postal | jsonify }},
+        "addressLocality": {{ c.commune | jsonify }},
+        "addressRegion": {{ c.departement | jsonify }},
         "addressCountry": "FR"
       },
       "areaServed": [
-        { "@type": "City", "name": "Confrançon" },
-        { "@type": "City", "name": "Montrevel-en-Bresse" },
-        { "@type": "City", "name": "Bourg-en-Bresse" },
-        { "@type": "AdministrativeArea", "name": "Ain" }
+        {%- for ville in seo.zone_desservie %}
+        { "@type": "City", "name": {{ ville | jsonify }} },
+        {%- endfor %}
+        { "@type": "AdministrativeArea", "name": {{ c.departement | jsonify }} }
       ],
       "founder": { "@id": "https://beatriceshiatsu.fr/#beatrice" },
       "employee": { "@id": "https://beatriceshiatsu.fr/#beatrice" },
       "availableChannel": {
         "@type": "ServiceChannel",
-        "servicePhone": "+33662088034",
+        "servicePhone": {{ c.telephone_lien | jsonify }},
         "availableLanguage": "fr"
       },
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu thérapeutique", "serviceType": "Shiatsu" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu du dos", "serviceType": "Shiatsu" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu des jambes drainage", "serviceType": "Shiatsu" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu de confort", "serviceType": "Shiatsu" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shiatsu du visage", "serviceType": "Shiatsu" } }
+        {%- for p in site.data.content.activite.prestations %}
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ p.titre | jsonify }}, "serviceType": "Shiatsu" } }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
       ]
     },
     {
       "@type": "Person",
       "@id": "https://beatriceshiatsu.fr/#beatrice",
-      "name": "Béatrice Morel",
+      "name": {{ c.praticienne | jsonify }},
       "givenName": "Béatrice",
       "familyName": "Morel",
       "jobTitle": ["Praticienne shiatsu", "Énergéticienne"],
@@ -86,9 +94,9 @@
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "postalCode": "01310",
-          "addressLocality": "Confrançon",
-          "addressRegion": "Ain",
+          "postalCode": {{ c.code_postal | jsonify }},
+          "addressLocality": {{ c.commune | jsonify }},
+          "addressRegion": {{ c.departement | jsonify }},
           "addressCountry": "FR"
         }
       }
@@ -97,7 +105,7 @@
       "@type": "WebSite",
       "@id": "https://beatriceshiatsu.fr/#site",
       "url": "https://beatriceshiatsu.fr/",
-      "name": "Shiatsu Être et Sens",
+      "name": {{ c.nom | jsonify }},
       "inLanguage": "fr-FR",
       "publisher": { "@id": "https://beatriceshiatsu.fr/#cabinet" }
     },
@@ -105,30 +113,16 @@
       "@type": "FAQPage",
       "@id": "https://beatriceshiatsu.fr/#faq",
       "mainEntity": [
+        {%- for q in site.data.content.partage.questions %}
         {
           "@type": "Question",
-          "name": "Comment se déroule une séance de shiatsu ?",
+          "name": {{ q.question_seo | default: q.question | jsonify }},
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Un temps d'échange, un bilan énergétique, puis le shiatsu : habillé, allongé sur un futon. On termine toujours par un moment de retour au calme."
+            "text": {{ q.reponse | jsonify }}
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Quoi porter pour une séance de shiatsu ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Une tenue souple et confortable, en matière naturelle si possible. Le shiatsu se pratique toujours habillé."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "À quelle fréquence faire une séance de shiatsu ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cela dépend de ce que vous venez travailler. Une séance ponctuelle peut suffire ; un accompagnement se construit parfois sur plusieurs rendez-vous."
-          }
-        }
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
       ]
     }
   ]
@@ -152,17 +146,14 @@
 
     <nav class="nav" id="nav-menu" aria-label="Navigation principale">
       <ul class="nav__list">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#activite">Activité</a></li>
-        <li><a href="#evenements">Événements</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#partage">Partage</a></li>
+        {%- for lien in site.data.content.navigation %}
+        <li><a href="{{ lien.ancre }}">{{ lien.libelle }}</a></li>
+        {%- endfor %}
       </ul>
     </nav>
 
     <a class="site-header__logo" href="#accueil">
-      <img src="./assets/img/logo.png" width="440" height="437" alt="Shiatsu Être et Sens" decoding="async">
+      <img src="./assets/img/logo.png" width="440" height="437" alt="{{ c.nom }}" decoding="async">
     </a>
   </div>
 </header>
@@ -173,22 +164,20 @@
     <div class="hero__media" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
     <div class="hero__inner">
-      <p class="hero__eyebrow">Confrançon · Ain</p>
+      <p class="hero__eyebrow">{{ site.data.content.hero.surtitre }}</p>
       <h1 class="hero__title">
-        <span class="hero__title-script">Shiatsu</span>
-        <span class="hero__title-caps">Être et Sens</span>
-        <span class="hero__title-name">Béatrice Morel</span>
+        <span class="hero__title-script">{{ site.data.content.hero.titre_calligraphie }}</span>
+        <span class="hero__title-caps">{{ site.data.content.hero.titre_capitales }}</span>
+        <span class="hero__title-name">{{ c.praticienne }}</span>
       </h1>
-      <p class="hero__role">Praticienne shiatsu · Énergéticienne</p>
+      <p class="hero__role">{{ c.role }}</p>
       <div class="hero__actions">
-        <a class="btn btn--solid btn--icon" href="tel:+33662088034">
-          <svg class="btn__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M21.5 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.5 2 2 0 0 1 2-2.2h2.6a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L7.5 9.4a15.8 15.8 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/>
-          </svg>
-          <span class="btn__phone">06 62 08 80 34</span>
+        <a class="btn btn--solid btn--icon" href="tel:{{ c.telephone_lien }}">
+          {{ icone_tel }}
+          <span class="btn__phone">{{ c.telephone_affiche }}</span>
         </a>
         <a class="hero__more" href="#activite">
-          <span>Découvrir les séances</span>
+          <span>{{ site.data.content.hero.lien_secondaire }}</span>
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
             <path d="M12 4.5v15M5.5 13l6.5 6.5 6.5-6.5"/>
           </svg>
@@ -205,170 +194,132 @@
     </svg>
   </div>
 
+  {%- assign ap = site.data.content.apropos %}
   <section class="section section--blush" id="a-propos">
     <div class="wrap">
-      <p class="section__kicker" data-reveal>À propos</p>
-      <h2 class="section__title" data-reveal>À propos de Béatrice Morel</h2>
-      <p class="section__lede" data-reveal>Le shiatsu s'adresse à tous et à tous les âges.</p>
+      <p class="section__kicker" data-reveal>{{ ap.kicker }}</p>
+      <h2 class="section__title" data-reveal>{{ ap.titre }}</h2>
+      <p class="section__lede" data-reveal>{{ ap.lede }}</p>
 
       <div class="about">
         <div class="about__text" data-reveal>
-          <p>Le shiatsu est une technique de rééquilibrage énergétique consistant à débloquer les surcharges émotionnelles stagnantes par des pressions exercées avec les doigts ou les paumes des mains.</p>
-          <p>Chaque séance commence par un temps d'écoute, puis un bilan énergétique qui permet d'adapter le travail à ce que le corps exprime ce jour-là. Le shiatsu se pratique habillé, allongé sur un futon, dans un cadre calme et sécurisant.</p>
-          <p>Je vous accompagne à mon cabinet de Confrançon, dans l'Ain, ou à votre domicile lorsque le déplacement est plus simple pour vous.</p>
-          <p class="about__signature">Béatrice Morel<br><span>Praticienne shiatsu · Énergéticienne</span></p>
+          {%- for paragraphe in ap.paragraphes %}
+          <p>{{ paragraphe }}</p>
+          {%- endfor %}
+          <p class="about__signature">{{ c.praticienne }}<br><span>{{ c.role }}</span></p>
         </div>
         <figure class="about__figure" data-reveal>
-          <div class="about__portrait" role="img" aria-label="Portrait de Béatrice Morel"></div>
-          <figcaption>Confrançon · sur rendez-vous</figcaption>
+          <div class="about__portrait" role="img" aria-label="Portrait de {{ c.praticienne }}"></div>
+          <figcaption>{{ ap.legende_photo }}</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
+  {%- assign act = site.data.content.activite %}
   <section class="section" id="activite">
     <div class="wrap">
-      <p class="section__kicker" data-reveal>Activité</p>
-      <h2 class="section__title" data-reveal>Mes séances de shiatsu</h2>
-      <p class="section__lede" data-reveal>Cinq accompagnements, adaptés à votre besoin du moment.</p>
+      <p class="section__kicker" data-reveal>{{ act.kicker }}</p>
+      <h2 class="section__title" data-reveal>{{ act.titre }}</h2>
+      <p class="section__lede" data-reveal>{{ act.lede }}</p>
 
       <ul class="cards">
+        {%- for p in act.prestations %}
         <li class="card" data-reveal>
-          <span class="card__chakra card__chakra--crown" aria-hidden="true"></span>
-          <h3 class="card__title">Shiatsu thérapeutique</h3>
-          <p class="card__sub">Bilan énergétique, shiatsu personnalisé, temps d'échange</p>
-          <p class="card__body">Stress, surcharges mentales, dépression, perte d'énergie globale, douleurs, renforcement du système immunitaire, acouphènes, ménopause, insomnie.</p>
+          <span class="card__chakra card__chakra--{{ p.chakra }}" aria-hidden="true"></span>
+          <h3 class="card__title">{{ p.titre }}</h3>
+          <p class="card__sub">{{ p.sous_titre }}</p>
+          <p class="card__body">{{ p.description }}</p>
           <div class="card__footer">
-            <p class="card__duration">1h15 à 1h30</p>
-            <p class="card__duration">Enfants jusqu'à 10 ans · 45 mn</p>
+            {%- for duree in p.durees %}
+            <p class="card__duration">{{ duree }}</p>
+            {%- endfor %}
           </div>
         </li>
-
-        <li class="card" data-reveal>
-          <span class="card__chakra card__chakra--throat" aria-hidden="true"></span>
-          <h3 class="card__title">Shiatsu du dos</h3>
-          <p class="card__sub">Ciblage des tensions : dos, nuque et tête</p>
-          <p class="card__body">Lâcher prise, réduire le stress, assouplir la colonne vertébrale, douleurs lombaires, rééquilibrage énergétique, circulation du dos, détente des muscles trapèzes.</p>
-          <div class="card__footer">
-            <p class="card__duration">45 mn</p>
-          </div>
-        </li>
-
-        <li class="card" data-reveal>
-          <span class="card__chakra card__chakra--root" aria-hidden="true"></span>
-          <h3 class="card__title">Shiatsu des jambes drainage</h3>
-          <p class="card__sub">Presso-esthétique, massage shiatsu</p>
-          <p class="card__body">Douleurs inflammatoires, circulation sanguine et lymphatique, améliorations musculaires, impatiences, récupération après effort, jambes lourdes, affinement de la silhouette.</p>
-          <div class="card__footer">
-            <p class="card__duration">1h</p>
-          </div>
-        </li>
-
-        <li class="card" data-reveal>
-          <span class="card__chakra card__chakra--heart" aria-hidden="true"></span>
-          <h3 class="card__title">Shiatsu de confort</h3>
-          <p class="card__sub">Points de shiatsu et étirements sur tous les méridiens du corps</p>
-          <p class="card__body">Amélioration de la circulation énergétique, détente profonde.</p>
-          <div class="card__footer">
-            <p class="card__duration">1h30</p>
-          </div>
-        </li>
-
-        <li class="card" data-reveal>
-          <span class="card__chakra card__chakra--brow" aria-hidden="true"></span>
-          <h3 class="card__title">Shiatsu du visage</h3>
-          <p class="card__sub">Points de shiatsu et massage ciblé</p>
-          <p class="card__body">Détente des muscles des yeux, du visage et du cou, dégage les voies respiratoires, sinusites, maux de tête et migraines, stress, anxiété, amélioration sanguine (couperose), élasticité de la peau (ridules, rides, sécheresse).</p>
-          <div class="card__footer">
-            <p class="card__duration">45 mn</p>
-          </div>
-        </li>
+        {%- endfor %}
       </ul>
 
-      <p class="notice" data-reveal>Tarifs communiqués par téléphone, au <a class="link" href="tel:+33662088034">06 62 08 80 34</a>.</p>
-      <p class="disclaimer" data-reveal>Le shiatsu est une technique de bien-être et de rééquilibrage énergétique. Il ne constitue pas un acte médical et ne remplace ni un diagnostic, ni un traitement, ni un avis médical.</p>
+      <p class="notice" data-reveal>{{ act.note_tarifs | replace: '[tel]', tel }}</p>
+      <p class="disclaimer" data-reveal>{{ act.avertissement }}</p>
     </div>
   </section>
 
+  {%- assign ev = site.data.content.evenements %}
   <section class="section section--mauve" id="evenements">
     <div class="wrap">
-      <p class="section__kicker" data-reveal>Événements</p>
-      <h2 class="section__title" data-reveal>Ateliers et événements</h2>
-      <p class="section__lede" data-reveal>Ateliers, salons et rencontres autour du shiatsu, dans l'Ain.</p>
+      <p class="section__kicker" data-reveal>{{ ev.kicker }}</p>
+      <h2 class="section__title" data-reveal>{{ ev.titre }}</h2>
+      <p class="section__lede" data-reveal>{{ ev.lede }}</p>
 
       <ul class="events">
+        {%- for e in ev.liste %}
         <li class="event event--tba" data-reveal>
           <div class="event__body">
-            <p class="event__pill">Date à venir</p>
-            <h3 class="event__title">Atelier découverte du shiatsu</h3>
-            <p>Une matinée pour découvrir les gestes de base et repartir avec quelques points simples à pratiquer chez soi.</p>
-            <p class="event__meta">Confrançon · sur inscription au <a class="link" href="tel:+33662088034">06 62 08 80 34</a></p>
+            <p class="event__pill">{{ e.badge }}</p>
+            <h3 class="event__title">{{ e.titre }}</h3>
+            <p>{{ e.description }}</p>
+            <p class="event__meta">{{ e.informations | replace: '[tel]', tel }}</p>
           </div>
         </li>
+        {%- endfor %}
       </ul>
 
-      <p class="notice" data-reveal>Les prochaines dates seront annoncées ici. N'hésitez pas à appeler pour être prévenue.</p>
+      <p class="notice" data-reveal>{{ ev.note }}</p>
     </div>
   </section>
 
+  {%- assign ct = site.data.content.contact %}
   <section class="section" id="contact">
     <div class="wrap">
-      <p class="section__kicker" data-reveal>Contact</p>
-      <h2 class="section__title" data-reveal>Contact et accès</h2>
-      <p class="section__lede" data-reveal>Les séances se déroulent uniquement sur rendez-vous.</p>
+      <p class="section__kicker" data-reveal>{{ ct.kicker }}</p>
+      <h2 class="section__title" data-reveal>{{ ct.titre }}</h2>
+      <p class="section__lede" data-reveal>{{ ct.lede }}</p>
 
       <div class="contact-panel" data-reveal>
         <div class="contact">
           <div class="contact__block">
-            <h3>Téléphone</h3>
-            <p><a class="contact__phone" href="tel:+33662088034">06 62 08 80 34</a></p>
-            <p class="contact__hint">Si je suis en séance, laissez-moi un message : je vous rappelle.</p>
+            <h3>{{ ct.telephone_titre }}</h3>
+            <p><a class="contact__phone" href="tel:{{ c.telephone_lien }}">{{ c.telephone_affiche }}</a></p>
+            <p class="contact__hint">{{ ct.telephone_precision }}</p>
           </div>
 
           <div class="contact__block">
-            <h3>Cabinet</h3>
-            <p class="contact__address">Confrançon</p>
-            <p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Confran%C3%A7on+01310" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></p>
+            <h3>{{ ct.cabinet_titre }}</h3>
+            <p class="contact__address">{{ ct.cabinet_adresse }}</p>
+            <p><a class="link" href="{{ c.maps_url | escape }}" target="_blank" rel="noopener">{{ ct.cabinet_lien_carte }}</a></p>
           </div>
 
           <div class="contact__block">
-            <h3>Déplacement</h3>
-            <p>Déplacement à domicile possible.</p>
-            <p class="contact__hint">Nous en parlons ensemble au téléphone, au <a class="link" href="tel:+33662088034">06 62 08 80 34</a>.</p>
+            <h3>{{ ct.deplacement_titre }}</h3>
+            <p>{{ ct.deplacement_texte }}</p>
+            <p class="contact__hint">{{ ct.deplacement_precision | replace: '[tel]', tel }}</p>
           </div>
         </div>
 
         <p class="contact__cta">
-          <a class="btn btn--solid btn--icon" href="tel:+33662088034">
-            <svg class="btn__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-              <path d="M21.5 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.5 2 2 0 0 1 2-2.2h2.6a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L7.5 9.4a15.8 15.8 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/>
-            </svg>
-            <span>Prendre rendez-vous</span>
+          <a class="btn btn--solid btn--icon" href="tel:{{ c.telephone_lien }}">
+            {{ icone_tel }}
+            <span>{{ ct.bouton }}</span>
           </a>
         </p>
       </div>
     </div>
   </section>
 
+  {%- assign pa = site.data.content.partage %}
   <section class="section section--blush" id="partage">
     <div class="wrap">
-      <p class="section__kicker" data-reveal>Partage</p>
-      <h2 class="section__title" data-reveal>Partage</h2>
-      <p class="section__lede" data-reveal>Questions fréquentes et repères pour prolonger le travail entre les séances.</p>
+      <p class="section__kicker" data-reveal>{{ pa.kicker }}</p>
+      <h2 class="section__title" data-reveal>{{ pa.titre }}</h2>
+      <p class="section__lede" data-reveal>{{ pa.lede }}</p>
 
       <ul class="notes">
+        {%- for q in pa.questions %}
         <li class="note" data-reveal>
-          <h3>Comment se déroule une séance de shiatsu&nbsp;?</h3>
-          <p>Un temps d'échange, un bilan énergétique, puis le shiatsu : habillé, allongé sur un futon. On termine toujours par un moment de retour au calme.</p>
+          <h3>{{ q.question }}</h3>
+          <p>{{ q.reponse }}</p>
         </li>
-        <li class="note" data-reveal>
-          <h3>Quoi porter&nbsp;?</h3>
-          <p>Une tenue souple et confortable, en matière naturelle si possible. Le shiatsu se pratique toujours habillé.</p>
-        </li>
-        <li class="note" data-reveal>
-          <h3>À quelle fréquence&nbsp;?</h3>
-          <p>Cela dépend de ce que vous venez travailler. Une séance ponctuelle peut suffire ; un accompagnement se construit parfois sur plusieurs rendez-vous.</p>
-        </li>
+        {%- endfor %}
       </ul>
     </div>
   </section>
@@ -378,16 +329,16 @@
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
     <div>
-      <p class="site-footer__brand">Shiatsu Être et Sens</p>
-      <p>Béatrice Morel, praticienne shiatsu et énergéticienne</p>
-      <p>Confrançon</p>
+      <p class="site-footer__brand">{{ c.nom }}</p>
+      <p>{{ site.data.content.pied.presentation }}</p>
+      <p>{{ c.commune }}</p>
     </div>
     <div>
-      <p><a class="link link--light" href="tel:+33662088034">06 62 08 80 34</a></p>
-      <p><a class="link link--light" href="./mentions-legales.html">Mentions légales</a></p>
+      <p><a class="link link--light" href="tel:{{ c.telephone_lien }}">{{ c.telephone_affiche }}</a></p>
+      <p><a class="link link--light" href="./mentions-legales.html">{{ site.data.content.pied.lien_mentions }}</a></p>
     </div>
   </div>
-  <p class="site-footer__base">© <span id="year">2026</span> Shiatsu Être et Sens · Béatrice Morel · Confrançon, Ain · Sur rendez-vous</p>
+  <p class="site-footer__base">© <span id="year">2026</span> {{ c.nom }} · {{ c.praticienne }} · {{ c.commune }}, {{ c.departement }} · {{ site.data.content.pied.mention_base }}</p>
 </footer>
 
 <script src="./assets/js/main.js" defer></script>
