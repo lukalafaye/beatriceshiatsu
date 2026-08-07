@@ -4,7 +4,7 @@ cabinet:
   role: Praticienne shiatsu · Énergéticienne
   telephone_affiche: 06 62 08 80 34
   telephone_lien: "+33662088034"
-  commune: Paris
+  commune: Confrançon
   departement: Ain
   code_postal: "01310"
   maps_url: https://www.google.com/maps/search/?api=1&query=Confran%C3%A7on+01310
@@ -143,9 +143,8 @@ partage:
   questions:
     - question: Comment se déroule une séance de shiatsu&nbsp;?
       question_seo: Comment se déroule une séance de shiatsu ?
-      reponse: "Un temps d'échange, un bilan énergétique, puis le shiatsu : habillé,
-        allongé sur un futon. On termine toujours par un moment de retour au
-        calme."
+      reponse: "Un temps d'échange, un bilan énergétique, puis le shiatsu :  On
+        termine toujours par un moment de retour au calme."
     - question: Quoi porter&nbsp;?
       question_seo: Quoi porter pour une séance de shiatsu ?
       reponse: Une tenue souple et confortable, en matière naturelle si possible. Le
