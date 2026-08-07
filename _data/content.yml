@@ -51,11 +51,11 @@ apropos:
       débloquer les surcharges émotionnelles stagnantes par des pressions
       exercées avec les doigts ou les paumes des mains.
     - Chaque séance commence par un temps d'écoute, puis un bilan énergétique
-      qui permet d'adapter le travail à ce que le corps exprime ce jour-là. Le
-      shiatsu se pratique habillé, allongé sur un futon, dans un cadre calme et
-      sécurisant.
-    - Je vous accompagne à mon cabinet de Confrançon, dans l'Ain, ou à votre
-      domicile lorsque le déplacement est plus simple pour vous.
+      qui permet d'adapter le travail à ce que le corps exprime ce jour-là. Je
+      pratique le Shiatsu sur une table de massage dans un cadre calme et
+      bienveillant.
+    - Je vous reçois sur la commune de Confrançon, je peux également me déplacer
+      si nécessaire.
   legende_photo: Confrançon · sur rendez-vous
 activite:
   kicker: Activité
@@ -71,6 +71,7 @@ activite:
       durees:
         - 1h15 à 1h30
         - Enfants jusqu'à 10 ans · 45 mn
+        - 50€ pour les adultes et 35€ pour les enfants
     - titre: Shiatsu du dos
       chakra: throat
       sous_titre: "Ciblage des tensions : dos, nuque et tête"
@@ -79,6 +80,7 @@ activite:
         détente des muscles trapèzes.
       durees:
         - 45 mn
+        - 40€
     - titre: Shiatsu des jambes drainage
       chakra: root
       sous_titre: Presso-esthétique, massage shiatsu
@@ -87,22 +89,25 @@ activite:
         jambes lourdes, affinement de la silhouette.
       durees:
         - 1h
+        - 40€
     - titre: Shiatsu de confort
       chakra: heart
       sous_titre: Points de shiatsu et étirements sur tous les méridiens du corps
       description: Amélioration de la circulation énergétique, détente profonde.
       durees:
         - 1h30
-    - titre: Shiatsu du visage
+        - 65€
+    - titre: Shiatsu du visage et crâne
       chakra: brow
       sous_titre: Points de shiatsu et massage ciblé
-      description: Détente des muscles des yeux, du visage et du cou, dégage les voies
-        respiratoires, sinusites, maux de tête et migraines, stress, anxiété,
-        amélioration sanguine (couperose), élasticité de la peau (ridules,
-        rides, sécheresse).
+      description: Détente des muscles des yeux, du visage, du crâne, du cou et de la
+        nuque. Dégage les voies respiratoires, sinusites, maux de tête et
+        migraines, stress, anxiété, amélioration sanguine (couperose),
+        élasticité de la peau (ridules, rides, sécheresse).
       durees:
         - 45 mn
-  note_tarifs: Tarifs communiqués par téléphone, au [tel].
+        - 35€
+  note_tarifs: Réservations par téléphone, au [tel].
   avertissement: Le shiatsu est une technique de bien-être et de rééquilibrage
     énergétique. Il ne constitue pas un acte médical et ne remplace ni un
     diagnostic, ni un traitement, ni un avis médical.
