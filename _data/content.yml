@@ -60,7 +60,7 @@ apropos:
 activite:
   kicker: Activité
   titre: Mes séances de shiatsu
-  lede: Cinq accompagnements, adaptés à votre besoin du moment.
+  lede: Sept accompagnements, adaptés à votre besoin du moment.
   prestations:
     - titre: Shiatsu thérapeutique
       chakra: crown
@@ -107,6 +107,9 @@ activite:
       durees:
         - 45 mn
         - 35€
+    - titre: Séance Magnétisme
+      durees:
+        - Ateliers Divers
   note_tarifs: Réservations par téléphone, au [tel].
   avertissement: Le shiatsu est une technique de bien-être et de rééquilibrage
     énergétique. Il ne constitue pas un acte médical et ne remplace ni un
@@ -114,12 +117,11 @@ activite:
 evenements:
   kicker: Événements
   titre: Ateliers et événements
-  lede: Ateliers, salons et rencontres autour du shiatsu, dans l'Ain.
+  lede: Ateliers
   liste:
     - badge: Date à venir
-      titre: Atelier découverte du shiatsu
-      description: Une matinée pour découvrir les gestes de base et repartir avec
-        quelques points simples à pratiquer chez soi.
+      titre: Atelier
+      description: "Une matinée pour découvrir "
       informations: Confrançon · sur inscription au [tel]
   note: Les prochaines dates seront annoncées ici. N'hésitez pas à appeler pour
     être prévenue.
@@ -145,10 +147,6 @@ partage:
       question_seo: Comment se déroule une séance de shiatsu ?
       reponse: "Un temps d'échange, un bilan énergétique, puis le shiatsu :  On
         termine toujours par un moment de retour au calme."
-    - question: Quoi porter&nbsp;?
-      question_seo: Quoi porter pour une séance de shiatsu ?
-      reponse: Une tenue souple et confortable, en matière naturelle si possible. Le
-        shiatsu se pratique toujours habillé.
     - question: À quelle fréquence&nbsp;?
       question_seo: À quelle fréquence faire une séance de shiatsu ?
       reponse: Cela dépend de ce que vous venez travailler. Une séance ponctuelle peut
