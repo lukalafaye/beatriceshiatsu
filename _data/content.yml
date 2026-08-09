@@ -31,12 +31,13 @@ navigation:
     ancre: "#a-propos"
   - libelle: Activité
     ancre: "#activite"
-  - libelle: Événements
+  - libelle: Prestations
     ancre: "#evenements"
   - libelle: Contact
     ancre: "#contact"
   - libelle: Partage
     ancre: "#partage"
+  - libelle: Événements
 hero:
   surtitre: Confrançon · Ain
   titre_calligraphie: Shiatsu
@@ -108,8 +109,6 @@ activite:
         - 45 mn
         - 35€
     - titre: Séance Magnétisme
-      durees:
-        - Ateliers Divers
   note_tarifs: Réservations par téléphone, au [tel].
   avertissement: Le shiatsu est une technique de bien-être et de rééquilibrage
     énergétique. Il ne constitue pas un acte médical et ne remplace ni un
