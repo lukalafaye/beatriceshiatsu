@@ -76,7 +76,7 @@
         "availableLanguage": "fr"
       },
       "makesOffer": [
-        {%- for p in site.data.content.activite.prestations %}
+        {%- for p in site.data.content.prestations.liste %}
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ p.titre | jsonify }}, "serviceType": "Shiatsu" } }{% unless forloop.last %},{% endunless %}
         {%- endfor %}
       ]
@@ -108,22 +108,6 @@
       "name": {{ c.nom | jsonify }},
       "inLanguage": "fr-FR",
       "publisher": { "@id": "https://beatriceshiatsu.fr/#cabinet" }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://beatriceshiatsu.fr/#faq",
-      "mainEntity": [
-        {%- for q in site.data.content.partage.questions %}
-        {
-          "@type": "Question",
-          "name": {{ q.question_seo | default: q.question | jsonify }},
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": {{ q.reponse | jsonify }}
-          }
-        }{% unless forloop.last %},{% endunless %}
-        {%- endfor %}
-      ]
     }
   ]
 }
@@ -176,7 +160,7 @@
           {{ icone_tel }}
           <span class="btn__phone">{{ c.telephone_affiche }}</span>
         </a>
-        <a class="hero__more" href="#activite">
+        <a class="hero__more" href="#prestations">
           <span>{{ site.data.content.hero.lien_secondaire }}</span>
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
             <path d="M12 4.5v15M5.5 13l6.5 6.5 6.5-6.5"/>
@@ -206,10 +190,17 @@
           {%- for paragraphe in ap.paragraphes %}
           <p>{{ paragraphe }}</p>
           {%- endfor %}
+          {%- if ap.formule and ap.formule != empty %}
+          <p class="about__closing">{{ ap.formule }}</p>
+          {%- endif %}
           <p class="about__signature">{{ c.praticienne }}<br><span>{{ c.role }}</span></p>
         </div>
         <figure class="about__figure" data-reveal>
+          {%- if ap.portrait and ap.portrait != empty %}
+          <img class="about__portrait about__portrait--photo" src="{{ ap.portrait }}" alt="{{ ap.portrait_alt | default: ap.legende_photo }}" loading="lazy" decoding="async">
+          {%- else %}
           <div class="about__portrait" role="img" aria-label="Portrait de {{ c.praticienne }}"></div>
+          {%- endif %}
           <figcaption>{{ ap.legende_photo }}</figcaption>
         </figure>
       </div>
@@ -223,24 +214,59 @@
       <h2 class="section__title" data-reveal>{{ act.titre }}</h2>
       <p class="section__lede" data-reveal>{{ act.lede }}</p>
 
+      <div class="definition">
+        <div class="definition__text" data-reveal>
+          {%- for paragraphe in act.paragraphes %}
+          <p>{{ paragraphe }}</p>
+          {%- endfor %}
+        </div>
+        {%- if act.image and act.image != empty %}
+        <figure class="definition__figure" data-reveal>
+          <img src="{{ act.image }}" alt="{{ act.image_alt }}" loading="lazy" decoding="async">
+          {%- if act.image_legende and act.image_legende != empty %}
+          <figcaption>{{ act.image_legende }}</figcaption>
+          {%- endif %}
+        </figure>
+        {%- endif %}
+      </div>
+    </div>
+  </section>
+
+  {%- assign pr = site.data.content.prestations %}
+  <section class="section section--blush" id="prestations">
+    <div class="wrap">
+      <p class="section__kicker" data-reveal>{{ pr.kicker }}</p>
+      <h2 class="section__title" data-reveal>{{ pr.titre }}</h2>
+      <p class="section__lede" data-reveal>{{ pr.lede }}</p>
+
       <ul class="cards">
-        {%- for p in act.prestations %}
+        {%- for p in pr.liste %}
         <li class="card" data-reveal>
           <span class="card__chakra card__chakra--{{ p.chakra }}" aria-hidden="true"></span>
           <h3 class="card__title">{{ p.titre }}</h3>
+          {%- if p.sous_titre and p.sous_titre != empty %}
           <p class="card__sub">{{ p.sous_titre }}</p>
+          {%- endif %}
+          {%- if p.description and p.description != empty %}
           <p class="card__body">{{ p.description }}</p>
+          {%- endif %}
+          {%- capture pied_carte %}{{ p.durees | join: '' }}{{ p.tarif }}{% endcapture -%}
+          {%- if pied_carte != empty %}
           <div class="card__footer">
             {%- for duree in p.durees %}
             <p class="card__duration">{{ duree }}</p>
             {%- endfor %}
+            {%- if p.tarif and p.tarif != empty %}
+            <p class="card__price">{{ p.tarif }}</p>
+            {%- endif %}
           </div>
+          {%- endif %}
         </li>
         {%- endfor %}
       </ul>
 
-      <p class="notice" data-reveal>{{ act.note_tarifs | replace: '[tel]', tel }}</p>
-      <p class="disclaimer" data-reveal>{{ act.avertissement }}</p>
+      <p class="notice" data-reveal>{{ pr.note_tarifs | replace: '[tel]', tel }}</p>
+      <p class="disclaimer" data-reveal>{{ pr.avertissement }}</p>
     </div>
   </section>
 
@@ -268,8 +294,26 @@
     </div>
   </section>
 
+  {%- assign pa = site.data.content.partage %}
+  <section class="section" id="partage">
+    <div class="wrap">
+      <p class="section__kicker" data-reveal>{{ pa.kicker }}</p>
+      <h2 class="section__title" data-reveal>{{ pa.titre }}</h2>
+      <p class="section__lede" data-reveal>{{ pa.lede }}</p>
+
+      <ul class="notes">
+        {%- for info in pa.infos %}
+        <li class="note" data-reveal>
+          <h3>{{ info.titre }}</h3>
+          <p>{{ info.texte | replace: '[tel]', tel }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
   {%- assign ct = site.data.content.contact %}
-  <section class="section" id="contact">
+  <section class="section section--blush" id="contact">
     <div class="wrap">
       <p class="section__kicker" data-reveal>{{ ct.kicker }}</p>
       <h2 class="section__title" data-reveal>{{ ct.titre }}</h2>
@@ -303,24 +347,6 @@
           </a>
         </p>
       </div>
-    </div>
-  </section>
-
-  {%- assign pa = site.data.content.partage %}
-  <section class="section section--blush" id="partage">
-    <div class="wrap">
-      <p class="section__kicker" data-reveal>{{ pa.kicker }}</p>
-      <h2 class="section__title" data-reveal>{{ pa.titre }}</h2>
-      <p class="section__lede" data-reveal>{{ pa.lede }}</p>
-
-      <ul class="notes">
-        {%- for q in pa.questions %}
-        <li class="note" data-reveal>
-          <h3>{{ q.question }}</h3>
-          <p>{{ q.reponse }}</p>
-        </li>
-        {%- endfor %}
-      </ul>
     </div>
   </section>
 

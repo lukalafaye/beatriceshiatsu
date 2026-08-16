@@ -555,6 +555,13 @@ body.nav-open .site-header { backdrop-filter: none; }
   color: var(--ink-soft);
 }
 
+.about__closing {
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--plum);
+}
+.about__closing + .about__signature { margin-top: .75rem; }
+
 .about__figure { margin: 0; }
 .about__portrait {
   aspect-ratio: 4 / 5;
@@ -564,6 +571,50 @@ body.nav-open .site-header { backdrop-filter: none; }
     radial-gradient(120% 80% at 30% 15%, rgba(255, 255, 255, .9), transparent 65%),
     linear-gradient(165deg, #fdf8fc, var(--blush-deep) 58%, var(--mauve));
   box-shadow: var(--shadow);
+}
+/* photo réelle : même cadre que le visuel de remplacement */
+.about__portrait--photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: var(--blush-deep);
+}
+
+/* ---------- définition du shiatsu (section Activité) ---------- */
+
+.definition {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.definition__text p { margin: 0 0 1.25rem; }
+.definition__text p:last-child { margin-bottom: 0; }
+
+.definition__figure {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(120% 80% at 30% 15%, rgba(255, 255, 255, .95), transparent 68%),
+    linear-gradient(165deg, #fdf8fc, var(--blush) 60%, var(--blush-deep));
+  box-shadow: var(--shadow-sm);
+}
+.definition__figure img {
+  display: block;
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+}
+.definition__figure figcaption {
+  margin-top: 1rem;
+  font-family: var(--script);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--plum);
 }
 .about__figure figcaption {
   margin-top: 1rem;
@@ -621,6 +672,8 @@ body.nav-open .site-header { backdrop-filter: none; }
   box-shadow: 0 0 0 7px color-mix(in srgb, currentColor 12%, transparent);
 }
 .card__chakra--root { color: var(--chakra-root); }
+.card__chakra--sacral { color: var(--chakra-sacral); }
+.card__chakra--solar { color: var(--chakra-solar); }
 .card__chakra--heart { color: var(--chakra-heart); }
 .card__chakra--throat { color: var(--chakra-throat); }
 .card__chakra--brow { color: var(--chakra-brow); }
@@ -658,6 +711,15 @@ body.nav-open .site-header { backdrop-filter: none; }
   font-weight: 300;
   font-size: .8125rem;
   color: var(--ink-soft);
+}
+/* le tarif se lit d'un coup d'œil : il ne doit pas se confondre avec les durées */
+.card__price {
+  margin: .625rem 0 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: .04em;
+  color: var(--plum-dark);
 }
 
 /* ---------- events ---------- */
@@ -831,6 +893,9 @@ a[href^='tel:'] { white-space: nowrap; }
 @media (max-width: 900px) {
   .about { grid-template-columns: 1fr; }
   .about__figure { order: -1; max-width: 21rem; margin-inline: auto; }
+
+  .definition { grid-template-columns: 1fr; }
+  .definition__figure { order: -1; max-width: 20rem; margin-inline: auto; }
 }
 
 @media (max-width: 760px) {

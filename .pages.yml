@@ -35,24 +35,39 @@ content:
           - { name: lien_secondaire, label: Lien secondaire, type: string }
 
       - name: apropos
-        label: À propos
+        label: À propos (mon parcours)
         type: object
         fields:
           - { name: kicker, label: Étiquette, type: string }
           - { name: titre, label: Titre, type: string }
           - { name: lede, label: Chapeau, type: string }
           - { name: paragraphes, label: Paragraphes, type: text, list: true }
-          - { name: legende_photo, label: Légende de la photo, type: string }
+          - { name: formule, label: "Formule de fin (ex. « En toute Bienveillance »)", type: string }
+          - { name: portrait, label: Photo de Béatrice (laisser vide s'il n'y en a pas), type: image }
+          - { name: portrait_alt, label: Description de la photo (accessibilité), type: string }
+          - { name: legende_photo, label: Légende sous la photo, type: string }
 
       - name: activite
-        label: Activité et prestations
+        label: Activité (définition du shiatsu)
         type: object
         fields:
           - { name: kicker, label: Étiquette, type: string }
           - { name: titre, label: Titre, type: string }
           - { name: lede, label: Chapeau, type: string }
-          - name: prestations
-            label: Prestations
+          - { name: paragraphes, label: Paragraphes, type: text, list: true }
+          - { name: image, label: Image affichée à côté du texte (le logo), type: image }
+          - { name: image_alt, label: Description de l'image (accessibilité), type: string }
+          - { name: image_legende, label: Légende sous l'image, type: string }
+
+      - name: prestations
+        label: Prestations (mes séances)
+        type: object
+        fields:
+          - { name: kicker, label: Étiquette, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: lede, label: Chapeau, type: string }
+          - name: liste
+            label: Séances
             type: object
             list: { min: 1, collapsible: { collapsed: true, summary: "{titre}" } }
             fields:
@@ -64,8 +79,9 @@ content:
                   values: [root, sacral, solar, heart, throat, brow, crown]
               - { name: sous_titre, label: Sous-titre, type: string }
               - { name: description, label: Description, type: text }
-              - { name: durees, label: Durées, type: string, list: { min: 1 } }
-          - { name: note_tarifs, label: "Note tarifs ([tel] = numéro cliquable)", type: string }
+              - { name: durees, label: Durées (une par ligne), type: string, list: true }
+              - { name: tarif, label: "Tarif (ex. 40 €) — laisser vide pour ne rien afficher", type: string }
+          - { name: note_tarifs, label: "Note sous les cartes ([tel] = numéro cliquable)", type: string }
           - { name: avertissement, label: Avertissement légal, type: text }
 
       - name: evenements
@@ -104,20 +120,19 @@ content:
           - { name: bouton, label: Libellé du bouton, type: string }
 
       - name: partage
-        label: Partage et questions fréquentes
+        label: Partage (info du moment)
         type: object
         fields:
           - { name: kicker, label: Étiquette, type: string }
           - { name: titre, label: Titre, type: string }
           - { name: lede, label: Chapeau, type: string }
-          - name: questions
-            label: Questions
+          - name: infos
+            label: Infos du moment
             type: object
-            list: { min: 1, collapsible: { collapsed: true, summary: "{question}" } }
+            list: { collapsible: { collapsed: true, summary: "{titre}" } }
             fields:
-              - { name: question, label: "Question affichée (&nbsp;? pour l'espace insécable)", type: string }
-              - { name: question_seo, label: Version complète pour Google, type: string }
-              - { name: reponse, label: Réponse, type: text }
+              - { name: titre, label: "Titre (&nbsp;? pour l'espace insécable)", type: string }
+              - { name: texte, label: "Texte ([tel] = numéro cliquable)", type: text }
 
       - name: pied
         label: Pied de page

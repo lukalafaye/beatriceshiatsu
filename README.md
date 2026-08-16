@@ -20,6 +20,19 @@ assets/fonts/           Montserrat + Allura auto-hébergées (woff2, licence OFL
 CNAME robots.txt sitemap.xml
 ```
 
+## Déroulement de la page
+
+Une seule page, six sections dans cet ordre :
+
+| Section | Ancre | Contenu |
+|---|---|---|
+| À propos | `#a-propos` | le parcours de Béatrice + sa photo |
+| Activité | `#activite` | définition du shiatsu + le logo en illustration |
+| Prestations | `#prestations` | les séances (cartes, durées, tarifs) |
+| Événements | `#evenements` | ateliers, salons |
+| Partage | `#partage` | « info du moment », librement éditable |
+| Contact | `#contact` | téléphone, commune, déplacement |
+
 ## Modifier le texte du site
 
 Le texte ne vit plus dans le HTML. Deux façons de le changer :
@@ -64,11 +77,20 @@ Toutes les couleurs sont des variables CSS en haut de `style.css` (palette repri
 
 ## À faire / à valider
 
+- [ ] **Nouveau logo (arbre aquarelle)** : le fichier transmis porte un filigrane de banque
+  d'images en travers. Inutilisable tel quel sur un site commercial. Récupérer la version
+  achetée/sans filigrane, en PNG fond transparent, ≥ 1000 px de côté.
+- [ ] **Séance de magnétisme** : le sous-titre et la description ont été rédigés faute
+  d'information, la durée et le tarif sont vides. À relire et compléter (`_data/content.yml`,
+  section `prestations`, ou via Pages CMS).
+- [ ] **Portrait** : champ `apropos.portrait` vide → un visuel de remplacement s'affiche.
+  Déposer la photo depuis Pages CMS pour qu'elle apparaisse.
 - [ ] **Photo d'accueil** : `assets/img/hero.jpg` fait 740×416 px — trop petit pour du plein écran, l'image est visiblement adoucie sur un grand écran. Remplacer par la même photo en ≥ 1920 px de large (même nom de fichier, rien d'autre à changer).
 - [ ] **Licence des visuels** : la photo et l'illustration des sept chakras viennent de sites tiers. Vérifier la licence d'usage commercial, ou les remplacer.
 - [ ] **Logo** : `logo.png` est un détourage automatique du JPEG scanné (fond blanc supprimé). Propre, mais raster. Une version vectorielle (SVG) serait plus nette et plus légère.
 - [ ] **Portrait** : `.about__portrait` est un dégradé de remplacement. Fournir une photo de Béatrice ou du cabinet.
-- [ ] **Texte « À propos »** : rédigé à partir du flyer, à relire et valider par Béatrice. Aucun diplôme ni certification n'y est mentionné — à ajouter par elle si elle le souhaite.
+- [ ] **Texte « À propos »** : fourni par Béatrice, repris tel quel à quelques corrections
+  de typographie près. Aucun diplôme ni certification n'y est mentionné — à ajouter si elle le souhaite.
 - [ ] **Mentions légales** : il reste l'adresse e-mail et le médiateur de la consommation
   (nom, adresse, site). L'identité, l'adresse professionnelle et le SIRET (499 714 335 00027)
   proviennent du registre officiel des entreprises.
