@@ -77,9 +77,9 @@ Toutes les couleurs sont des variables CSS en haut de `style.css` (palette repri
 
 ## À faire / à valider
 
-- [ ] **Nouveau logo (arbre aquarelle)** : le fichier transmis porte un filigrane de banque
-  d'images en travers. Inutilisable tel quel sur un site commercial. Récupérer la version
-  achetée/sans filigrane, en PNG fond transparent, ≥ 1000 px de côté.
+- [ ] **Favicon et image de partage** : `favicon.png`, `apple-touch-icon.png` et `og-image.jpg`
+  portent encore l'ancien logo aux sept chakras, alors que l'en-tête affiche l'arbre.
+  À régénérer depuis `logo-arbre.png` pour être cohérent.
 - [ ] **Séance de magnétisme** : le sous-titre et la description ont été rédigés faute
   d'information, la durée et le tarif sont vides. À relire et compléter (`_data/content.yml`,
   section `prestations`, ou via Pages CMS).
@@ -87,7 +87,9 @@ Toutes les couleurs sont des variables CSS en haut de `style.css` (palette repri
   Déposer la photo depuis Pages CMS pour qu'elle apparaisse.
 - [ ] **Photo d'accueil** : `assets/img/hero.jpg` fait 740×416 px — trop petit pour du plein écran, l'image est visiblement adoucie sur un grand écran. Remplacer par la même photo en ≥ 1920 px de large (même nom de fichier, rien d'autre à changer).
 - [ ] **Licence des visuels** : la photo et l'illustration des sept chakras viennent de sites tiers. Vérifier la licence d'usage commercial, ou les remplacer.
-- [ ] **Logo** : `logo.png` est un détourage automatique du JPEG scanné (fond blanc supprimé). Propre, mais raster. Une version vectorielle (SVG) serait plus nette et plus légère.
+- [ ] **Logos** : `logo-arbre.png` (en-tête) et `logo.png` (l'ancien, illustrant la section
+  Activité) sont tous deux raster. Des versions vectorielles (SVG) seraient plus nettes et
+  plus légères.
 - [ ] **Portrait** : `.about__portrait` est un dégradé de remplacement. Fournir une photo de Béatrice ou du cabinet.
 - [ ] **Texte « À propos »** : fourni par Béatrice, repris tel quel à quelques corrections
   de typographie près. Aucun diplôme ni certification n'y est mentionné — à ajouter si elle le souhaite.
@@ -103,6 +105,20 @@ Toutes les couleurs sont des variables CSS en haut de `style.css` (palette repri
   un service tiers et une politique de confidentialité. Les rendez-vous se prennent par téléphone.
 - **Polices auto-hébergées** plutôt que le CDN Google Fonts : appeler `fonts.googleapis.com` transmet
   l'adresse IP des visiteurs à Google, ce qui a été jugé contraire au RGPD (Landgericht München, 2022).
+  `montserrat-latin.woff2` est un sous-ensemble de la police variable officielle. Pour le
+  régénérer (si de nouveaux caractères apparaissent dans le texte) :
+
+  ```sh
+  pip3 install fonttools brotli
+  curl -sLO "https://github.com/google/fonts/raw/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf"
+  python3 -m fontTools.subset "Montserrat[wght].ttf" \
+    --unicodes="U+0020-007F,U+00A0-00FF,U+2018-201D,U+2013,U+2014,U+2026,U+00AB,U+00BB,U+20AC,U+0152-0153" \
+    --flavor=woff2 --layout-features='kern,liga,clig,calt,ccmp,locl,mark,mkmk' \
+    --output-file=assets/fonts/montserrat-latin.woff2
+  ```
+
+  Vérifier ensuite la couverture — un sous-ensemble amputé fait basculer le texte
+  dans la police système sans prévenir, lettre par lettre.
 - **Aucun cookie, aucun traceur** : pas de bandeau de consentement nécessaire.
 - **Données structurées** `HealthAndBeautyBusiness` (JSON-LD) pour le référencement local autour de Confrançon et Bourg-en-Bresse. Elles sont générées depuis `_data/content.yml`, donc elles ne peuvent pas se désynchroniser du texte affiché.
 - **Contenu séparé du gabarit** : `_data/content.yml` d'un côté, `index.html` de l'autre. C'est ce qui rend l'édition possible sans toucher au HTML.
