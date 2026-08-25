@@ -1,7 +1,3 @@
-# Tout le texte du site. Modifiable depuis Pages CMS ou directement ici.
-# Dans les textes, [tel] est remplacé par le numéro cliquable.
-# &nbsp; sert à coller l'espace insécable avant un ? ou un ! (typographie française).
-
 cabinet:
   nom: Shiatsu Être et Sens
   praticienne: Béatrice Morel
@@ -12,7 +8,6 @@ cabinet:
   departement: Ain
   code_postal: "01310"
   maps_url: https://www.google.com/maps/search/?api=1&query=Confran%C3%A7on+01310
-
 seo:
   titre: Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)
   description: Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon
@@ -29,7 +24,6 @@ seo:
     - Confrançon
     - Montrevel-en-Bresse
     - Bourg-en-Bresse
-
 navigation:
   - libelle: À propos
     ancre: "#a-propos"
@@ -43,13 +37,11 @@ navigation:
     ancre: "#partage"
   - libelle: Contact
     ancre: "#contact"
-
 hero:
   surtitre: Confrançon · Ain
   titre_calligraphie: Shiatsu
   titre_capitales: Être et Sens
   lien_secondaire: Découvrir les séances
-
 apropos:
   kicker: À propos
   titre: À propos de Béatrice Morel
@@ -57,8 +49,8 @@ apropos:
   paragraphes:
     - Je m'appelle Béatrice Morel, je suis praticienne shiatsu et énergéticienne
       depuis 2005.
-    - Ayant auparavant suivi plusieurs formations sur le corps humain, je me suis
-      toujours intéressée à l'interaction des émotions sur celui-ci.
+    - Ayant auparavant suivi plusieurs formations sur le corps humain, je me
+      suis toujours intéressée à l'interaction des émotions sur celui-ci.
     - "Ma méthode de travail est simple : j'accompagne les personnes sur des
       douleurs physiques, le système nerveux, les surcharges mentales et
       émotionnelles."
@@ -66,12 +58,12 @@ apropos:
       qu'elles ne s'installent trop dans la matière (le corps).
     - Ce travail, je le fais moi-même chaque jour et je le ressens avant de le
       partager dans mes accompagnements.
-    - J'ai maintes fois entendu «&nbsp;lâcher prise&nbsp;», «&nbsp;ancrage&nbsp;»
-      lors de mes consultations auprès de thérapeutes.
-    - Lâcher prise, je veux bien, mais comment&nbsp;? Puis, un jour, j'ai compris
-      que ce fameux moment n'arriverait pas par une volonté mentale, mais par un
-      ressenti du corps… À ce moment-là, j'ai ressenti ce que je pouvais faire
-      pour aider et permettre à chacun de se sentir en Paix.
+    - J'ai maintes fois entendu «&nbsp;lâcher prise&nbsp;»,
+      «&nbsp;ancrage&nbsp;» lors de mes consultations auprès de thérapeutes.
+    - Lâcher prise, je veux bien, mais comment&nbsp;? Puis, un jour, j'ai
+      compris que ce fameux moment n'arriverait pas par une volonté mentale,
+      mais par un ressenti du corps… À ce moment-là, j'ai ressenti ce que je
+      pouvais faire pour aider et permettre à chacun de se sentir en Paix.
     - Lors de mes séances je m'adapte à chaque personne, à chaque vibration, et
       j'entends ce que votre corps veut dire.
     - Nous n'avons pas tous la même manière de gérer la surcharge mentale ou
@@ -80,19 +72,17 @@ apropos:
     - Il n'y a pas de petites émotions, juste celles qui vous appartiennent.
       N'attendez pas d'aller au-delà de vos limites.
   formule: En toute Bienveillance
-  # Laisser vide tant qu'il n'y a pas de photo : un visuel de remplacement s'affiche.
-  portrait: ""
   portrait_alt: Béatrice Morel, praticienne shiatsu à Confrançon
   legende_photo: Confrançon · sur rendez-vous
-
 activite:
   kicker: Activité
   titre: Le shiatsu
   lede: Le shiatsu s'adresse à tous et à tous les âges.
   paragraphes:
     - Le shiatsu est une technique de rééquilibrage énergétique consistant à
-      débloquer les surcharges émotionnelles stagnantes par des pressions
-      exercées avec les doigts ou les paumes des mains.
+      débloquer les surcharges émotionnelles stagnantes liés aux organes, par
+      des pressions et des étirements exercés avec les doigts ou les paumes des
+      mains.
     - Chaque séance commence par un temps d'écoute, puis un bilan énergétique
       qui permet d'adapter le travail à ce que le corps exprime ce jour-là. Je
       pratique le shiatsu sur une table de massage, dans un cadre calme et
@@ -102,7 +92,6 @@ activite:
   image: /assets/img/logo.png
   image_alt: Logo Shiatsu Être et Sens
   image_legende: Être et Sens
-
 prestations:
   kicker: Prestations
   titre: Mes séances
@@ -111,13 +100,13 @@ prestations:
     - titre: Shiatsu thérapeutique
       chakra: crown
       sous_titre: Bilan énergétique, shiatsu personnalisé, temps d'échange
-      description: Stress, surcharges mentales, dépression, perte d'énergie globale,
+      description: "Stress, surcharges mentales, dépression, perte d'énergie globale,
         douleurs, renforcement du système immunitaire, acouphènes, ménopause,
-        insomnie.
+        insomnie, "
       durees:
         - 1h15 à 1h30
-        - Enfants jusqu'à 10 ans · 45 mn
-      tarif: 50 € · enfants 35 €
+        - Enfants jusqu'à 12 ans · 45 mn
+      tarif: Adultes 50 € · Enfants (jusqu'à 12ans) 35 €
     - titre: Shiatsu du dos
       chakra: throat
       sous_titre: "Ciblage des tensions : dos, nuque et tête"
@@ -135,14 +124,14 @@ prestations:
         jambes lourdes, affinement de la silhouette.
       durees:
         - 1h
-      tarif: 40 €
-    - titre: Shiatsu de confort
+      tarif: 35 €
+    - titre: Shiatsu et Massage énergétique
       chakra: heart
       sous_titre: Points de shiatsu et étirements sur tous les méridiens du corps
       description: Amélioration de la circulation énergétique, détente profonde.
       durees:
         - 1h30
-      tarif: 65 €
+      tarif: 70 €
     - titre: Shiatsu du visage et du crâne
       chakra: brow
       sous_titre: Points de shiatsu et massage ciblé
@@ -153,34 +142,28 @@ prestations:
       durees:
         - 45 mn
       tarif: 35 €
-    # ⚠️ TEXTE PROVISOIRE, écrit faute d'information : à relire et corriger.
-    # La durée et le tarif sont volontairement vides (la carte s'affiche sans).
     - titre: Séance de magnétisme
       chakra: solar
       sous_titre: Harmonisation énergétique par imposition des mains
-      description: Séance d'énergétique, sans pression ni manipulation. Accompagne la
-        fatigue, les blocages énergétiques et les périodes de surcharge
-        émotionnelle.
-      durees: []
-      tarif: ""
+      description: "Séance d'énergétique, sans pression ni manipulation. "
+      durees:
+        - 30/40 mn
+      tarif: 30€
   note_tarifs: Réservations par téléphone, au [tel].
   avertissement: Le shiatsu est une technique de bien-être et de rééquilibrage
     énergétique. Il ne constitue pas un acte médical et ne remplace ni un
     diagnostic, ni un traitement, ni un avis médical.
-
 evenements:
   kicker: Événements
   titre: Ateliers et événements
-  lede: Ateliers, salons et rencontres autour du shiatsu, dans l'Ain.
+  lede: Ateliers à définir
   liste:
-    - badge: Date à venir
-      titre: Atelier découverte du shiatsu
-      description: Une matinée pour découvrir les gestes de base et repartir avec
-        quelques points simples à pratiquer chez soi.
+    - badge: Dates à venir
+      titre: Atelier dates à définir
+      description: Atelier Ancrage et Lâcher Prise à venir
       informations: Confrançon · sur inscription au [tel]
   note: Les prochaines dates seront annoncées ici. N'hésitez pas à appeler pour
     être prévenue.
-
 partage:
   kicker: Partage
   titre: Info du moment
@@ -189,14 +172,10 @@ partage:
     - titre: Comment se déroule une séance&nbsp;?
       texte: Un temps d'échange, un bilan énergétique, puis le shiatsu. On termine
         toujours par un moment de retour au calme.
-    - titre: Quoi porter&nbsp;?
-      texte: Une tenue souple et confortable, en matière naturelle si possible. Le
-        shiatsu se pratique toujours habillé.
     - titre: À quelle fréquence&nbsp;?
       texte: Cela dépend de ce que vous venez travailler. Une séance ponctuelle peut
         suffire ; un accompagnement se construit parfois sur plusieurs
         rendez-vous.
-
 contact:
   kicker: Contact
   titre: Contact et accès
@@ -210,7 +189,6 @@ contact:
   deplacement_texte: Déplacement à domicile possible.
   deplacement_precision: Nous en parlons ensemble au téléphone, au [tel].
   bouton: Prendre rendez-vous
-
 pied:
   presentation: Béatrice Morel, praticienne shiatsu et énergéticienne
   lien_mentions: Mentions légales
