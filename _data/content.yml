@@ -11,8 +11,7 @@ cabinet:
 seo:
   titre: Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)
   description: Béatrice Morel, praticienne shiatsu et énergéticienne à Confrançon
-    (Ain), près de Bourg-en-Bresse. Shiatsu thérapeutique, du dos, du visage.
-    Sur rendez-vous.
+    (Ain), près de Bourg-en-Bresse. Séances Sur rendez-vous.
   og_titre: Béatrice Morel · Shiatsu Être et Sens à Confrançon (Ain)
   og_description: Praticienne shiatsu et énergéticienne à Confrançon, près de
     Bourg-en-Bresse. Technique de rééquilibrage énergétique, sur rendez-vous.
@@ -115,7 +114,7 @@ prestations:
         détente des muscles trapèzes.
       durees:
         - 45 mn
-      tarif: 40 €
+      tarif: 35 €
     - titre: Shiatsu des jambes drainage
       chakra: root
       sous_titre: Presso-esthétique, massage shiatsu
@@ -124,14 +123,14 @@ prestations:
         jambes lourdes, affinement de la silhouette.
       durees:
         - 1h
-      tarif: 35 €
+      tarif: 40 €
     - titre: Shiatsu et Massage énergétique
       chakra: heart
       sous_titre: Points de shiatsu et étirements sur tous les méridiens du corps
       description: Amélioration de la circulation énergétique, détente profonde.
       durees:
         - 1h30
-      tarif: 70 €
+      tarif: 65 €
     - titre: Shiatsu du visage et du crâne
       chakra: brow
       sous_titre: Points de shiatsu et massage ciblé
@@ -149,10 +148,12 @@ prestations:
       durees:
         - 30/40 mn
       tarif: 30€
+    - titre: "Ateliers Ancrage "
+      chakra: sacral
   note_tarifs: Réservations par téléphone, au [tel].
-  avertissement: Le shiatsu est une technique de bien-être et de rééquilibrage
-    énergétique. Il ne constitue pas un acte médical et ne remplace ni un
-    diagnostic, ni un traitement, ni un avis médical.
+  avertissement: Le shiatsu est une technique de rééquilibrage énergétique. Il ne
+    constitue pas un acte médical et ne remplace ni un diagnostic, ni un
+    traitement, ni un avis médical.
 evenements:
   kicker: Événements
   titre: Ateliers et événements
