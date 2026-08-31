@@ -94,7 +94,7 @@ activite:
 prestations:
   kicker: Prestations
   titre: Mes séances
-  lede: Six accompagnements, adaptés à votre besoin du moment.
+  lede: Sept accompagnements, adaptés à votre besoin du moment.
   liste:
     - titre: Shiatsu thérapeutique
       chakra: crown
@@ -182,7 +182,8 @@ contact:
   titre: Contact et accès
   lede: Les séances se déroulent uniquement sur rendez-vous.
   telephone_titre: Téléphone
-  telephone_precision: "Si je suis en séance, laissez-moi un message : je vous rappelle."
+  telephone_precision: |
+    Vous pouvez me contacter par message en me précisant vos disponibilités
   cabinet_titre: Cabinet
   cabinet_adresse: Confrançon
   cabinet_lien_carte: Ouvrir dans Google Maps
